@@ -1,0 +1,74 @@
+.title-font {
+    font-family: "Montserrat", "sans-serif";
+}
+
+.twitter {
+    margin-right: 5%;
+}
+
+.instagram {
+    margin-left: 5%;
+}
+
+.question_list ul {
+    list-style: none;
+    padding: 0px 0px 0px 15px !important;
+}
+
+.question_list li {
+    margin-top: 4%;
+    line-height: 200%;
+    border-bottom: 1px solid #808080;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    font-size: 120%;
+}
+
+.question_title {
+    font-size: 102%;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 132%;
+}
+
+/*
+　　@media Start
+*/
+
+@media screen and (min-width:300px) {
+    /*　画面サイズが480pxからはここを読み込む　*/
+    .py-8 {
+        padding-top: 21.5rem !important;
+        padding-bottom: 20.5rem !important;
+    }
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+    .py-8 {
+        padding-top: 17rem !important;
+        padding-bottom: 17rem !important;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    /*　画面サイズが1024pxからはここを読み込む　*/
+    .py-8 {
+        padding-top: 6.4rem !important;
+        padding-bottom: 6.4rem !important;
+    }
+
+    .background-holder {
+        height: 90vh;
+    }
+
+    .micros_cando {
+        font-weight: bold;
+        /* font-size: 120%;
+        display: table-cell;
+        vertical-align: middle;         */
+    }
+}
+
