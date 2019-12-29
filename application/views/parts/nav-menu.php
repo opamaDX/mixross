@@ -21,14 +21,8 @@
                     <li><a href="mailto:info@example.com?subject=&body=">お問い合わせ</a></li>
                 </ul>
                 <ul class="navbar-nav ml-lg-auto">
-                    <li>
-                        <a class="btn btn-outline-primary btn-capsule btn-sm border-2x fw-700" href="<?php echo base_url(); ?>main_ctrl/load_page_sign_in"
-                            target="_blank">ログイン</a>
-                    </li>
-                    <li>
-                        <a class="btn btn-outline-primary btn-capsule btn-sm border-2x fw-700" href="<?php echo base_url(); ?>main_ctrl/load_page_sign_up"
-                            target="_blank">新規登録</a>
-                    </li>
+                    <li><?php echo anchor('main_ctrl/load_page_sign_in','ログイン',$anchor_sign_in_data); ?></li>
+                    <li><?php echo anchor('main_ctrl/load_page_sign_up','新規登録',$anchor_sign_up_data); ?></li>
                 </ul>
             </div>
         </nav>

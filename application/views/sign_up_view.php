@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-    <?php include(dirname(__FILE__)."/inc/header.php"); ?>
-</head>
+<?php
+    include(dirname(__FILE__)."/inc/header.php"); 
+?>
 
 <body data-spy="scroll" data-target=".inner-link" data-offset="60">
     <main>
@@ -19,7 +16,8 @@
             </div>
         </div>
         <section class="text-center py-0">
-            <div class="background-holder overlay overlay-1" style="background-image:url(<?php echo base_url(); ?>assets/images/mixross-sign.jpg);">
+            <div class="background-holder overlay overlay-1"
+                style="background-image:url(<?php echo base_url(); ?>assets/images/mixross-sign.jpg);">
             </div>
             <!--/.background-holder-->
             <div class="container">
@@ -68,9 +66,17 @@
             <!--/.container-->
         </section>
     </main>
-    <!-- スクリプト読み込み Start -->
-    <?php include(dirname(__FILE__)."/inc/footer-script.php"); ?>
-    <!-- スクリプト読み込み End -->
+    <!-- Footer Start -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/lib/CustomEase.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/config.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/zanimation.js"></script>
+    <script src="<?php echo base_url() ?>assets/lib/flexslider/jquery.flexslider-min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/core.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/main.js"></script>
+    <!-- Footer End -->
 </body>
 
 </html>

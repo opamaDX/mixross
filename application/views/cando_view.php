@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <?php include(dirname(__FILE__)."/inc/header.php"); ?>
-</head>
+<?php
+    include( dirname(__FILE__)."/attributes/nav_menu_data.php");
+    include(dirname(__FILE__)."/inc/header.php"); 
+?>
 
 <body data-spy="scroll" data-target=".inner-link" data-offset="60">
     <main>
@@ -219,17 +217,6 @@
         </section>
         <!-- Section3 公式SNS End -->
 
-        <!-- Section4 フッター Start -->
-        <section class="background-primary text-center py-4">
-            <?php include(dirname(__FILE__)."/inc/footer.php"); ?>
-        </section>
-        <!-- Section4 フッター End -->
-
-    </main>
-
-    <!-- スクリプト読み込み Start -->
-    <?php include(dirname(__FILE__)."/inc/footer-script.php"); ?>
-    <!-- スクリプト読み込み End -->
-</body>
-
-</html>
+        <!-- Footer Start -->
+        <?php include(dirname(__FILE__)."/inc/footer.php"); ?>
+        <!-- Footer End -->

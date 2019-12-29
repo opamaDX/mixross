@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <?php include(dirname(__FILE__)."/inc/header.php"); ?>
-</head>
+<?php
+    include( dirname(__FILE__)."/attributes/nav_menu_data.php");
+    include(dirname(__FILE__)."/inc/header.php");
+?>
 
 <body data-spy="scroll" data-target=".inner-link" data-offset="60">
     <main>
@@ -101,8 +99,8 @@
                 <div class="row mt-lg-6">
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-event.jpg"
-                                alt="Featured Image" />
+                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -131,8 +129,8 @@
 
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-event.jpg"
-                                alt="Featured Image" />
+                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -161,8 +159,8 @@
 
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-event.jpg"
-                                alt="Featured Image" />
+                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -191,8 +189,8 @@
 
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-event.jpg"
-                                alt="Featured Image" />
+                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -221,8 +219,8 @@
 
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-event.jpg"
-                                alt="Featured Image" />
+                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -251,8 +249,8 @@
 
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-event.jpg"
-                                alt="Featured Image" />
+                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -487,8 +485,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="mb-4 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-member.jpg"
-                                alt="Profile Picture" />
+                            <img class="mb-4 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -505,8 +503,8 @@
 
                     <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="mb-4 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-member.jpg"
-                                alt="Profile Picture" />
+                            <img class="mb-4 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -523,8 +521,8 @@
 
                     <div class="col-sm-6 col-lg-4 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="mb-4 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-member.jpg"
-                                alt="Profile Picture" />
+                            <img class="mb-4 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -541,8 +539,8 @@
 
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="mb-4 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-member.jpg"
-                                alt="Profile Picture" />
+                            <img class="mb-4 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -559,8 +557,8 @@
 
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="mb-4 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-member.jpg"
-                                alt="Profile Picture" />
+                            <img class="mb-4 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -577,8 +575,8 @@
 
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="mb-4 radius-tr-secondary radius-tl-secondary" src="assets/images/mixross-member.jpg"
-                                alt="Profile Picture" />
+                            <img class="mb-4 radius-tr-secondary radius-tl-secondary"
+                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -661,16 +659,6 @@
         </section>
         <!-- Section8 公式SNS End -->
 
-        <!-- Section9 フッター Start -->
-        <section class="background-primary text-center py-4">
-            <?php include(dirname(__FILE__)."/inc/footer.php"); ?>
-        </section>
-        <!-- Section9 フッター End -->
-    </main>
-
-    <!-- スクリプト読み込み Start -->
-    <?php include(dirname(__FILE__)."/inc/footer-script.php"); ?>
-    <!-- スクリプト読み込み End -->
-</body>
-
-</html>
+        <!-- Footer Start -->
+        <?php include(dirname(__FILE__)."/inc/footer.php"); ?>
+        <!-- Footer End -->
