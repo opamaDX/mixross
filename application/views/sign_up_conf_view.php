@@ -1,7 +1,5 @@
 <?php
-    include(dirname(__FILE__)."/attributes/sign_up_data.php");
     include(dirname(__FILE__)."/inc/header.php");
-    echo $email;
 ?>
 
 <body>
@@ -17,33 +15,27 @@
                 </div>
             </div>
         </div>
-        <section class="text-center py-0">
+        <section class="py-0">
             <div class="background-holder overlay overlay-1"
                 style="background-image:url(<?php echo base_url(); ?>assets/images/mixross-sign.jpg);">
             </div>
             <!--/.background-holder-->
             <div class="container">
-                <div class="row h-300vh align-items-center">
+                <div class="row h-300vh">
                     <div class="col-md-9 col-lg-10 mx-auto" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                         <div class="background-white radius-secondary p-4 p-md-5 mt-5" data-zanim='{"delay":0.1}'>
-                            <h4 class="text-uppercase fs-0 fs-md-1">アカウント登録情報確認</h4>
+                            <h4 class="text-uppercase fs-0 fs-md-1 text-center">新規アカウント登録</h4>
 
-                            <?php
-                                //form Start
-                                echo form_open('sign_up_ctrl/indicate_post',$form_open_data);
-                            ?>
-                            <div class="row align-items-center">
-                                <h5 class="col-12 border-bottom">個人情報</span></h5>
+                            <div class="row">
+                                <h5 class="col-12 border-bottom">登録情報確認</h5>
 
                                 <!-- row1 姓名-->
                                 <div class="color-7 col-12 small mt-4">お名前</div>
-                                <div class="col-6 mt-4"><?php echo $last_name; ?></div>
-                                <div class="col-6 mt-4"><?php echo $first_name; ?></div>
+                                <div class="col-12 mt-4"><?php echo $last_name." ".$first_name; ?></div>
 
                                 <!-- row2 セイメイ-->
                                 <div class="color-7 col-12 small mt-4">フリガナ</div>
-                                <div class="col-6 mt-4"><?php echo $last_kana_name; ?></div>
-                                <div class="col-6 mt-4"><?php echo $first_kana_name; ?></div>
+                                <div class="col-12 mt-4"><?php echo $last_kana_name." ".$first_kana_name; ?></div>
 
                                 <!-- row3 性別-->
                                 <div class="color-7 col-12 small mt-4">性別</div>
@@ -53,15 +45,9 @@
 
                                 <!-- ro4 生年月日 -->
                                 <div class="color-7 col-12 small mt-4">生年月日</div>
-                                <div class="col-3 mt-4">
-                                    <?php echo $year; ?>
-                                </div>年
-                                <div class="col-3 mt-4">
-                                    <?php echo $month; ?>
-                                </div>月
-                                <div class="col-3 mt-4">
-                                    <?php echo $day; ?>
-                                </div>日
+                                <div class="col-12 mt-4">
+                                    <?php echo $year.'年'.$month.'月'.$day.'日'; ?>
+                                </div>
 
                                 <!-- row5 メールアドレス -->
                                 <div class="color-7 col-12 small mt-4">メールアドレス</div>
@@ -75,20 +61,21 @@
                                 <div class="color-7 col-12 small mt-4">確認用パスワード</div>
                                 <div class="col-12 mt-4"><?php echo $check_pass ?></div>
 
-                                <!-- row7 確認ボタン-->
-                                <div class="col-md-6 mt-3"><?php echo form_button($form_button_data); ?></div>
+                                <!-- row7 戻るボタン-->
+                                <div class="col-md-6 mt-3">
+                                    <button class="btn btn-primary btn-block" type="button" onclick="history.back()">戻る</button>
+                                </div>
 
-                                <!-- row8 submitボタン-->
-                                <div class="col-md-6 mt-3"><?php echo form_button($form_button_data); ?></div>
+                                <!-- row8 登録ボタン-->
+                                <div class="col-md-6 mt-3">
+                                    <button class="btn btn-primary btn-block" type="submit" id="submit" onclick = " location.href='load_page_complete' ">登録</button>
+                                </div>
 
-                                <?php
-                                    //form End
-                                    echo form_close();
-                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
     </main>
 

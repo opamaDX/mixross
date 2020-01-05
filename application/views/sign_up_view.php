@@ -86,7 +86,6 @@
 
                                 <!-- row8 submitボタン-->
                                 <div class="col-md-6 mt-3"><?php echo form_button($form_button_data); ?></div>
-
                                 <?php
                                     //form End
                                     echo form_close();

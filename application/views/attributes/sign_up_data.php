@@ -2,8 +2,7 @@
     $form_open_data = array(
         'class'         => 'mt-4 text-left',
         'name'          => 'date',
-        'id'            => '',
-        'target'        => '_blank'
+        'id'            => ''
     );
 
     $input_last_name_data = array(
@@ -36,9 +35,9 @@
 
     $select_gender_data = array(
         'initial'        => '----',
-        'male'           => '男',
-        'female'         => '女',
-        'other'          => 'その他',
+        '男'           => '男',
+        '女'         => '女',
+        'その他'          => 'その他',
     );
 
     // 現在の年度を取得
