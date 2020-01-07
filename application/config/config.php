@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// 自作で追加
+$config['salt'] = 'h6F4htejW69moG6gndjplC12';
+$config['auth_time'] = 3600;
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

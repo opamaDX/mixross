@@ -29,7 +29,7 @@
 
                             <?php
                                 //form Start
-                                echo form_open('sign_up_ctrl/indicate_post',$form_open_data);
+                                echo form_open('sign_up_ctrl/conf',$form_open_data);
                             ?>
                             <div class="row align-items-center">
 

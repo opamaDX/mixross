@@ -8,20 +8,45 @@ class Sign_up_ctrl extends CI_Controller {
         // $this->load->view('home_view');
 	}
 
-	public function indicate_post() {
-		// バリデーション
+	public function conf() {
+
 		// XSSフィルタを通して、POST値を受け取る
-		// CSRF関数も作る
 		$post_data = $this->input->post(NULL, TRUE);
+
+		// POST値をSESSIONに格納する
+		$this->session->set_userdata($post_data);
+
 		// 確認画面移行
 		$this->load->view('sign_up_conf_view',$post_data);
 	}
 
-	public function  load_page_complete() {
-		// 仮登録確認画面に遷移
+	public function  complete() {
+
+		//usersモデルとemailライブラリーのロード
+		$this->load->model('sign_up_model');
+		$this->load->library('email');
+
+		// トークン付きURLの生成
+		$url_token = hash('sha256',uniqid(rand(),1));
+		$url = "http://www.mixross.com/index.php/sign_up_ctrl/regist"."?urltoken=".$url_token;
+		$this->session->set_userdata('url_token',$url_token);
+
+		// 仮テーブルにデータを格納する
+		$this->sign_up_model->pre_insert($url_token);
+
+		// 仮登録のメールを送信する
+        $this->email->from('marumori.0211@gmail.com', '永井裕大郎');
+        $this->email->to( $this->session->userdata('email') );
+        $this->email->subject('Email Test');
+        $this->email->message('click here '.$url);
+		$this->email->send();
+
+		// 仮登録完了画面に遷移
 		$this->load->view('sign_up_complete_view');
 	}
 
-
-
+	public function  regist() {
+		// 本登録完了画面に遷移
+		$this->load->view('sign_up_regist_view');
+	}
 }

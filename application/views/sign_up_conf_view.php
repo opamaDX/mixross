@@ -68,7 +68,7 @@
 
                                 <!-- row8 登録ボタン-->
                                 <div class="col-md-6 mt-3">
-                                    <button class="btn btn-primary btn-block" type="submit" id="submit" onclick = " location.href='load_page_complete' ">登録</button>
+                                    <button class="btn btn-primary btn-block" type="submit" id="submit" onclick = " location.href='complete' ">登録</button>
                                 </div>
 
                             </div>

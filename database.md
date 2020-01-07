@@ -47,5 +47,16 @@ create table users (
 );
 ```
 
+expires越してないか&&token合っているかどうか確認する
+```
+create table pre_users (
+ id 		    int(11) primary key auto_increment,
+ url_token      varchar(128) NOT NULL,
+ email			varchar(50) NOT NULL,
+ date           datetime NOT NULL,
+ expires		datetime default date+3600
+);
+```
+
 
 
