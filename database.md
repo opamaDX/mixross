@@ -51,10 +51,16 @@ expires越してないか&&token合っているかどうか確認する
 ```
 create table pre_users (
  id 		    int(11) primary key auto_increment,
+ last_name      varchar(50) NOT NULL,
+ last_kana_name varchar(50) NOT NULL,
+ first_name     varchar(50) NOT NULL,
+ frst_kana_name varchar(50) NOT NULL,
+ gender         varchar(10) NOT NULL,
+ birthday		date NOT NULL,
+ email			varchar(256) NOT NULL,
+ password 		varchar(256) NOT NULL,
  url_token      varchar(128) NOT NULL,
- email			varchar(50) NOT NULL,
- date           datetime NOT NULL,
- expires		datetime default date+3600
+ date           timestamp default CURRENT_TIMESTAMP NOT NULL
 );
 ```
 

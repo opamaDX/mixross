@@ -32,7 +32,8 @@ class Sign_up_ctrl extends CI_Controller {
 		$this->session->set_userdata('url_token',$url_token);
 
 		// 仮テーブルにデータを格納する
-		$this->sign_up_model->pre_insert($url_token);
+		$birthday = $this->sign_up_model->create_birthday();
+		$this->sign_up_model->pre_regist($url_token,$birthday);
 
 		// 仮登録のメールを送信する
         $this->email->from('marumori.0211@gmail.com', '永井裕大郎');
@@ -46,7 +47,25 @@ class Sign_up_ctrl extends CI_Controller {
 	}
 
 	public function  regist() {
-		// 本登録完了画面に遷移
-		$this->load->view('sign_up_regist_view');
+
+		// urlトークンを入手
+		$url_token = $this->input->get('urltoken');
+
+		// 1時間以内のアクセスかどうか調べる
+		$this->load->model('sign_up_model');
+		$result_date = $this->sign_up_model->check_date($url_token);
+
+		if ( $result_date == true ) {
+
+			// 仮テーブルから本テーブルにデータを移動する
+			$this->load->model('sign_up_model');
+			$this->sign_up_model->regist($url_token);
+
+			// 本登録完了画面に遷移
+			$this->load->view('sign_up_regist_view');
+
+		} else {
+			show_404();
+		}
 	}
 }

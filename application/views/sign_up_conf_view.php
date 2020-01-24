@@ -53,23 +53,19 @@
                                 <div class="color-7 col-12 small mt-4">メールアドレス</div>
                                 <div class="col-12 mt-4"><?php echo $email; ?></div>
 
-                                <!-- row6 パスワード-->
-                                <div class="color-7 col-12 small mt-4">パスワード</div>
-                                <div class="col-12 mt-4"><?php echo $pass; ?></div>
-
-                                <!-- row7 確認用パスワード-->
-                                <div class="color-7 col-12 small mt-4">確認用パスワード</div>
-                                <div class="col-12 mt-4"><?php echo $check_pass ?></div>
-
-                                <!-- row7 戻るボタン-->
+                                <!-- row6 戻るボタン-->
                                 <div class="col-md-6 mt-3">
                                     <button class="btn btn-primary btn-block" type="button" onclick="history.back()">戻る</button>
                                 </div>
 
-                                <!-- row8 登録ボタン-->
+                                <!-- row7 登録ボタン-->
                                 <div class="col-md-6 mt-3">
                                     <button class="btn btn-primary btn-block" type="submit" id="submit" onclick = " location.href='complete' ">登録</button>
                                 </div>
+
+                                <!-- 余白用のdivタグ -->
+                                <div class="color-7 col-12 small mt-4"></div>
+                                <div class="col-12 mt-4"></div>
 
                             </div>
                         </div>
