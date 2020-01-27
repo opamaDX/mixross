@@ -4,6 +4,8 @@
             <a class="navbar-brand overflow-hidden pr-3" href="<?php echo base_url();?>">
                 <div>みくろす</div>
             </a>
+
+            <!-- ハンバーガーメニュー Start -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger hamburger--emphatic">
@@ -12,6 +14,8 @@
                     </div>
                 </div>
             </button>
+            <!-- ハンバーガーメニュー End -->
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav fs-0 fw-700">
                     <li><?php echo anchor('main_ctrl/load_page_cando', 'みくろすでできること'); ?></li>
