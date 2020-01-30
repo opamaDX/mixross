@@ -33,12 +33,11 @@
 </head>
 
 <body class="grey lighten-3">
-
     <!--Main Navigation-->
     <header>
 
-        <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <!-- Navbar PCのときだけナビゲーション表示-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar d-xl-none">
             <div class="container-fluid">
 
                 <!-- Brand -->
@@ -64,21 +63,16 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" href="#"
-                                target="_blank">会員リスト</a>
+                            <a class="nav-link waves-effect" href="#" target="_blank">会員リスト</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" href="#"
-                                target="_blank">イベント一覧</a>
+                            <a class="nav-link waves-effect" href="#" target="_blank">イベント一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link waves-effect"
-                                href="#"
-                                target="_blank">イベント投稿</a>
+                            <a class="nav-link waves-effect" href="#" target="_blank">イベント投稿</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" href="#"
-                                target="_blank">解析</a>
+                            <a class="nav-link waves-effect" href="#" target="_blank">解析</a>
                         </li>
                     </ul>
 
@@ -112,24 +106,27 @@
         <!-- Sidebar -->
         <div class="sidebar-fixed position-fixed">
 
-            <a class="logo-wrapper waves-effect">
+            <a href="load_page_home" class="logo-wrapper waves-effect">
                 <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
             </a>
 
             <div class="list-group list-group-flush">
                 <a href="#" class="list-group-item active waves-effect">
-                    <i class="fas fa-chart-pie mr-3"></i>Dashboard
+                    <i class="fas fa-chart-line mr-3"></i>解析
                 </a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-user mr-3"></i>Profile</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-user mr-3"></i>会員リスト</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-table mr-3"></i>Tables</a>
+                <a href="load_page_member" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-user mr-3"></i>会員一覧</a>
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
                     <i class="fas fa-chart-line mr-3"></i>解析</a>
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-money-bill-alt mr-3"></i>イベント投稿</a>
+                    <i class="fas fa-calendar-check mr-3"></i>イベント一覧</a>
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-calendar-alt mr-3"></i>イベント編集</a>
+
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-table mr-3"></i>その他（考え中）</a>
+
+
             </div>
 
         </div>
@@ -149,9 +146,9 @@
                 <div class="card-body d-sm-flex justify-content-between">
 
                     <h4 class="mb-2 mb-sm-0 pt-1">
-                        <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">Home Page</a>
+                        <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">ホーム</a>
                         <span>/</span>
-                        <span>Dashboard</span>
+                        <span>解析</span>
                     </h4>
 
                     <form class="d-flex justify-content-center">
@@ -1307,21 +1304,6 @@
 
     <!--Footer-->
     <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-
-        <!--Call to action-->
-        <div class="pt-4">
-            <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank" role="button">Download
-                MDB
-                <i class="fas fa-download ml-2"></i>
-            </a>
-            <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank"
-                role="button">Start
-                free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
-            </a>
-        </div>
-        <!--/.Call to action-->
 
         <hr class="my-4">
 

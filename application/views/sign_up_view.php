@@ -35,6 +35,7 @@
 
                                 <h5 class="col-12 border-bottom">個人情報</span></h5>
                                 <div class="color-7 col-12 small mt-4"><span class="text-danger">※</span>は必須項目です。</div>
+
                                 <!-- row1 姓名-->
                                 <div class="color-7 col-12 small mt-4">お名前<span class="text-danger bold">※</span></div>
                                 <div class="col-6 mt-4"><?php echo form_input($input_last_name_data); ?></div>
@@ -63,6 +64,10 @@
                                     <?php echo form_dropdown('day',$select_day_data,'initial','class="form-control form-control-lg"'); ?>
                                 </div>日
 
+                                <!-- row8 電話番号-->
+                                <div class="color-7 col-12 small mt-4">電話番号<span class="text-danger bold">※</span></div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_tell_data); ?></div>
+
                                 <!-- row5 メールアドレス -->
                                 <div class="color-7 col-12 small mt-4">メールアドレス<span class="text-danger bold">※</span>
                                 </div>
@@ -77,6 +82,47 @@
                                 <div class="color-7 col-12 small mt-4">確認用パスワード<span class="text-danger bold">※</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_password($form_check_pass_data); ?></div>
+
+                                <!-- row2 学校の情報 -->
+                                <h5 class="col-12 border-bottom mt-5">学校情報</span></h5>
+                                <div class="color-7 col-12 small mt-4"><span class="text-danger">※</span>は必須項目です。</div>
+
+                                <!-- row8 学校名-->
+                                <div class="color-7 col-12 small mt-4">学校名<span class="text-danger bold">※</span></div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_university_data); ?></div>
+
+                                <!-- row9 学部名-->
+                                <div class="color-7 col-12 small mt-4">学部名<span class="text-danger bold">※</span></div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_faculty_data); ?></div>
+
+                                <!-- row8 学科名-->
+                                <div class="color-7 col-12 small mt-4">学科名<span class="text-danger bold">※</span></div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_department_data); ?></div>
+
+                                <!-- ro4 卒業予定年 -->
+                                <div class="color-7 col-12 small mt-4">卒業予定年<span class="text-danger bold">※</span>
+                                </div>
+                                <div class="col-5 mt-4">
+                                    <?php echo form_dropdown('year',$select_graduate_year_data,'initial','class="form-control form-control-lg"'); ?>
+                                </div>年
+                                <div class="col-5 mt-4">
+                                    <?php echo form_dropdown('month',$select_graduate_month_data,'initial','class="form-control form-control-lg"'); ?>
+                                </div>月
+
+                                <!-- row8 高校名-->
+                                <div class="color-7 col-12 small mt-4">出身高校名<span class="text-danger bold">※</span>
+                                </div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_high_school_data); ?></div>
+
+                                <!-- row8 ゼミ・研究室-->
+                                <div class="color-7 col-12 small mt-4">ゼミ・研究室<span class="text-danger bold">※</span>
+                                </div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_seminar_data); ?></div>
+
+                                <!-- row8 クラブ・サークル-->
+                                <div class="color-7 col-12 small mt-4">クラブ・サークル<span class="text-danger bold">※</span>
+                                </div>
+                                <div class="col-12 mt-4"><?php echo form_input($input_club_data); ?></div>
 
                                 <!-- row8 チェックボックス-->
                                 <div class="col-md-6 mt-3">

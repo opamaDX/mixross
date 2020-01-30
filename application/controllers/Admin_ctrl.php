@@ -24,5 +24,13 @@ class Admin_ctrl extends CI_Controller {
 			exit;
 		}
 	}
+
+	public function load_page_home() {
+		$this->load->view('admin/admin_view');
+	}
+
+	public function load_page_member() {
+		$this->load->view('admin/member_view');
+	}
 }
 
