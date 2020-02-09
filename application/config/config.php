@@ -28,6 +28,7 @@ $config['auth_time'] = 3600;
 |
 */
 $config['base_url'] = '//www.mixross.com';
+// $config['base_url'] = 'http://localhost/mixross-admin/mixross';
 
 /*
 |--------------------------------------------------------------------------
