@@ -26,7 +26,7 @@
                 </ul>
                 <ul class="navbar-nav ml-lg-auto">
                     <li><?php echo anchor('main_ctrl/load_page_sign_in','ログイン',$anchor_sign_in_data); ?></li>
-                    <li><?php echo anchor('main_ctrl/load_page_sign_up','新規登録',$anchor_sign_up_data); ?></li>
+                    <li><?php echo anchor('sign_up_ctrl','新規登録',$anchor_sign_up_data); ?></li>
                 </ul>
             </div>
         </nav>

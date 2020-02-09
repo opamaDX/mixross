@@ -5,19 +5,31 @@ class Sign_up_ctrl extends CI_Controller {
 
 	public function index()
 	{
-        // $this->load->view('home_view');
+		$this->load->view('sign_up_view');
 	}
 
 	public function conf() {
 
+		$this->load->helper('cookie');
+		$this->load->library('form_validation');
+
 		// XSSフィルタを通して、POST値を受け取る
 		$post_data = $this->input->post(NULL, TRUE);
+		var_dump($post_data);
 
 		// POST値をSESSIONに格納する
 		$this->session->set_userdata($post_data);
 
-		// 確認画面移行
-		$this->load->view('sign_up_conf_view',$post_data);
+		if ( $this->form_validation->run('sign_up') == FALSE ) {
+				// 元の画面に戻る
+				$this->load->view('sign_up_view',$post_data);
+				echo "失敗";
+		} else {
+				// 確認画面移行
+		        $this->load->view('sign_up_conf_view',$post_data);
+				echo "成功";
+		}
+
 	}
 
 	public function  complete() {
@@ -66,6 +78,18 @@ class Sign_up_ctrl extends CI_Controller {
 
 		} else {
 			show_404();
+		}
+	}
+
+	// 独自のバリデーションルール
+	// 選択肢が「----」(initial)の場合Falseを返す
+	public function _not_hyphen($choice) {
+		
+		if ( $choice == "initial" ) {
+			$this->form_validation->set_message('_not_hyphen', '選択肢を選択してください。');
+			return false;
+		} else {
+			return true;
 		}
 	}
 }

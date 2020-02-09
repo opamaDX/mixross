@@ -1,6 +1,9 @@
 <?php
     include(dirname(__FILE__)."/attributes/sign_up_data.php");
     include(dirname(__FILE__)."/inc/header.php");
+    echo validation_errors();
+
+    
 ?>
 
 <body>
@@ -28,7 +31,7 @@
                             <h4 class="text-uppercase fs-0 fs-md-1">新規アカウント登録</h4>
 
                             <?php
-                                //form Start
+                                // form Start
                                 echo form_open('sign_up_ctrl/conf',$form_open_data);
                             ?>
                             <div class="row align-items-center">
@@ -64,42 +67,42 @@
                                     <?php echo form_dropdown('day',$select_day_data,'initial','class="form-control form-control-lg"'); ?>
                                 </div>日
 
-                                <!-- row8 電話番号-->
+                                <!-- row5 電話番号-->
                                 <div class="color-7 col-12 small mt-4">電話番号<span class="text-danger bold">※</span></div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_tell_data); ?></div>
 
-                                <!-- row5 メールアドレス -->
+                                <!-- row6 メールアドレス -->
                                 <div class="color-7 col-12 small mt-4">メールアドレス<span class="text-danger bold">※</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_email_data); ?></div>
 
-                                <!-- row6 パスワード-->
+                                <!-- row7 パスワード-->
                                 <div class="color-7 col-12 small mt-4">パスワード<span class="text-danger bold">※</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_password($form_pass_data); ?></div>
 
-                                <!-- row7 確認用パスワード-->
+                                <!-- row8 確認用パスワード-->
                                 <div class="color-7 col-12 small mt-4">確認用パスワード<span class="text-danger bold">※</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_password($form_check_pass_data); ?></div>
 
-                                <!-- row2 学校の情報 -->
+                                <!-- row9 学校の情報 -->
                                 <h5 class="col-12 border-bottom mt-5">学校情報</span></h5>
                                 <div class="color-7 col-12 small mt-4"><span class="text-danger">※</span>は必須項目です。</div>
 
-                                <!-- row8 学校名-->
-                                <div class="color-7 col-12 small mt-4">学校名<span class="text-danger bold">※</span></div>
+                                <!-- row10 学校名-->
+                                <div class="color-7 col-12 small mt-4">大学名<span class="text-danger bold">※</span></div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_university_data); ?></div>
 
-                                <!-- row9 学部名-->
+                                <!-- row11 学部名-->
                                 <div class="color-7 col-12 small mt-4">学部名<span class="text-danger bold">※</span></div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_faculty_data); ?></div>
 
-                                <!-- row8 学科名-->
+                                <!-- row12 学科名-->
                                 <div class="color-7 col-12 small mt-4">学科名<span class="text-danger bold">※</span></div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_department_data); ?></div>
 
-                                <!-- ro4 卒業予定年 -->
+                                <!-- ro13 卒業予定年 -->
                                 <div class="color-7 col-12 small mt-4">卒業予定年<span class="text-danger bold">※</span>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -109,28 +112,29 @@
                                     <?php echo form_dropdown('month',$select_graduate_month_data,'initial','class="form-control form-control-lg"'); ?>
                                 </div>月
 
-                                <!-- row8 高校名-->
+                                <!-- row14 高校名-->
                                 <div class="color-7 col-12 small mt-4">出身高校名<span class="text-danger bold">※</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_high_school_data); ?></div>
 
-                                <!-- row8 ゼミ・研究室-->
-                                <div class="color-7 col-12 small mt-4">ゼミ・研究室<span class="text-danger bold">※</span>
+                                <!-- row15 ゼミ・研究室-->
+                                <div class="color-7 col-12 small mt-4">ゼミ・研究室</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_seminar_data); ?></div>
 
-                                <!-- row8 クラブ・サークル-->
-                                <div class="color-7 col-12 small mt-4">クラブ・サークル<span class="text-danger bold">※</span>
+                                <!-- row16 クラブ・サークル-->
+                                <div class="color-7 col-12 small mt-4">クラブ・サークル</span>
                                 </div>
                                 <div class="col-12 mt-4"><?php echo form_input($input_club_data); ?></div>
+                                <div></div>
 
-                                <!-- row8 チェックボックス-->
+                                <!-- row17 チェックボックス-->
                                 <div class="col-md-6 mt-3">
                                     <?php echo form_checkbox($form_checkbox_data); ?>
                                     <span class="color-7">利用規約に同意する</span>
                                 </div>
 
-                                <!-- row8 submitボタン-->
+                                <!-- row8 submitボタン -->
                                 <div class="col-md-6 mt-3"><?php echo form_button($form_button_data); ?></div>
                                 <?php
                                     //form End
@@ -145,14 +149,16 @@
 
     <!-- Footer Start -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/lib/CustomEase.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/config.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/zanimation.js"></script>
-    <script src="<?php echo base_url() ?>assets/lib/flexslider/jquery.flexslider-min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/core.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/main.js"></script>
+    <script src="<?php echo base_url(); ?>assets/lib/CustomEase.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/config.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/zanimation.js"></script>
+    <script src="<?php echo base_url(); ?>assets/lib/flexslider/jquery.flexslider-min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/core.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+    <!-- Myscript  -->
+    <script src="<?php echo base_url(); ?>assets/js/sign_up.js"></script>
     <!-- Footer End -->
 
 </body>
