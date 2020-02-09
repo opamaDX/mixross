@@ -118,10 +118,10 @@
                     <i class="fas fa-user mr-3"></i>会員一覧</a>
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
                     <i class="fas fa-chart-line mr-3"></i>解析</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                <a href="load_page_event_list" class="list-group-item list-group-item-action waves-effect">
                     <i class="fas fa-calendar-check mr-3"></i>イベント一覧</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-calendar-alt mr-3"></i>イベント編集</a>
+                <a href="load_page_event_update" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-calendar-alt mr-3"></i>イベント投稿</a>
 
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
                     <i class="fas fa-table mr-3"></i>その他（考え中）</a>

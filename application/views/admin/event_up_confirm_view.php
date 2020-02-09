@@ -148,17 +148,8 @@
                     <h4 class="mb-2 mb-sm-0 pt-1">
                         <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">ホーム</a>
                         <span>/</span>
-                        <span>会員一覧</span>
+                        <span>イベント投稿確認</span>
                     </h4>
-
-                    <form class="d-flex justify-content-center">
-                        <!-- Default input -->
-                        <input type="search" placeholder="Type your query" aria-label="Search" class="form-control">
-                        <button class="btn btn-primary btn-sm my-0 p" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-
-                    </form>
 
                 </div>
 
@@ -176,108 +167,33 @@
 
                         <!--Card content-->
                         <div class="card-body">
-
-                            <!-- Table  -->
-                            <table class="table table-hover">
-                                <!-- Table head -->
-                                <thead class="blue-grey lighten-4">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Lorem</th>
-                                        <th>Ipsum</th>
-                                        <th>Dolor</th>
-                                    </tr>
-                                </thead>
-                                <!-- Table head -->
-
-                                <!-- Table body -->
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-                                </tbody>
-                                <!-- Table body -->
-                            </table>
-                            <!-- Table  -->
-
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-12 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card content-->
-                        <div class="card-body">
-
-                            <!-- Table  -->
-                            <table class="table table-hover">
-                                <!-- Table head -->
-                                <thead class="blue lighten-4">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>名前</th>
-                                        <th>性別</th>
-                                        <th>生年月日</th>
-                                        <th>メールアドレス</th>
-                                        <th>電話番号</th>
-                                    </tr>
-                                </thead>
-                                <!-- Table head -->
-
-                                <!-- Table body -->
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>永井裕大郎</td>
-                                        <td>男</td>
-                                        <td>1998年2月11日</td>
-                                        <td>example@example.com</td>
-                                        <td>xxx-xxxx-xxxx</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                    </tr>
-                                </tbody>
-                                <!-- Table body -->
-                            </table>
-                            <!-- Table  -->
-
+                            <div class="row ml-2 pt-1">
+                                <div class="col-xm-12">
+                                    <label for="">イベントタイトル</label>
+                                    <h4><?php if(isset($_SESSION['title'])) { echo $_SESSION['title']; } ?></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xm-12 ml-4 pt-1">
+                                    <label for="">開催日</label>
+                                    <p class="lead"><?php if(isset($_SESSION['event_hold'])) { echo $_SESSION['event_hold']; } ?></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xm-12 ml-4 pt-1">
+                                    <label for="">イベント概要</label>
+                                    <p><?php if(isset($_SESSION['content'])) { echo nl2br($_SESSION['content']); } ?></p>
+                                </div>
+                            </div>
+                            <form action="<?php echo site_url('event_up_ctrl/admin'); ?>" method="post"  enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class="text-warning">最後に投稿する画像を選択して下さい</label>
+                                    <input type="file" class="form-control-file" name="file">
+                                </div>
+                                <div class="row">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block ml-3 mr-3" name="confirm_btn">イベント投稿確認</button>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
@@ -353,7 +269,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="<?php echo base_url() ?>assets/js/mdb.min.js"></script>
     <!-- Initializations -->
-
+    <!-- sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
     // Animations initialization
     new WOW().init();
