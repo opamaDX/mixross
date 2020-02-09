@@ -59,3 +59,78 @@ $name = array(
 
 //この名前で設定しておけばRegisterクラスのindexメソッドで勝手に呼び出されるようになります
 $config['register/index'] = array($mail, $password, $passconf, $name);
+
+$config = array(
+  'sign_up' => array(
+          array(
+                  'field' => 'last_kana_name',
+                  'label' => '姓',
+                  'rules' => 'regex_match[/^[ァ-ヶー]+$/u]'
+          ),
+          array(
+                  'field' => 'first_kana_name',
+                  'label' => '名',
+                  'rules' => 'regex_match[/^[ァ-ヶー]+$/u]'
+          ),
+          array(
+                  'field' => 'gender',
+                  'label' => '性別',
+                  'rules' => 'callback__not_hyphen'
+          ),
+          array(
+                  'field' => 'year',
+                  'label' => '年',
+                  'rules' => 'callback__not_hyphen'
+          ),
+          array(
+                  'field' => 'month',
+                  'label' => '月',
+                  'rules' => 'callback__not_hyphen'
+          ),
+          array(
+                  'field' => 'day',
+                  'label' => '日',
+                  'rules' => 'callback__not_hyphen'
+          ),
+          array(
+                  'field' => 'tell',
+                  'label' => '電話番号',
+                  'rules' => 'numeric'
+           ),
+          array(
+                  'field' => 'email',
+                  'label' => 'メールアドレス',
+                  'rules' => 'valid_email'
+          ),
+          array(
+                  'field' => 'pass',
+                  'label' => 'パスワード',
+                  'rules' => 'alpha_numeric'
+          ),
+          array(
+                  'field' => 'check_pass',
+                  'label' => '確認用パスワード',
+                  'rules' => 'alpha_numeric'
+          ),
+          array(
+                  'field' => 'graduate_year',
+                  'label' => '卒業年',
+                  'rules' => 'callback__not_hyphen'
+          ),
+          array(
+                  'field' => 'graduate_month',
+                  'label' => '卒業月',
+                  'rules' => 'callback__not_hyphen'
+          ),
+          array(
+                  'field' => 'seminar',
+                  'label' => 'ゼミ・研究室',
+                  'rules' => 'max_length[30]'
+          ),
+          array(
+                  'field' => 'club',
+                  'label' => 'クラブ・サークル',
+                  'rules' => 'max_length[30]'
+    )
+  )
+);

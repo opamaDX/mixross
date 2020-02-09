@@ -28,8 +28,4 @@ class Main_ctrl extends CI_Controller {
 		$this->load->view('sign_in_view');
 	}
 
-	public function load_page_sign_up() {
-		$this->load->view('sign_up_view');
-	}
-
 }

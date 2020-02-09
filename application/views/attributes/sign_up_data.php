@@ -1,14 +1,35 @@
 <?php
+
+    if ( empty( $last_name       ) ) { $last_name = NULL; }
+    if ( empty( $first_name      ) ) { $first_name = NULL; }
+    if ( empty( $last_kana_name  ) ) { $last_kana_name = NULL; }
+    if ( empty( $first_kana_name ) ) { $first_kana_name = NULL; }
+    if ( empty( $gender          ) ) { $gender = NULL; }
+    if ( empty( $year            ) ) { $year = NULL; }
+    if ( empty( $month           ) ) { $month = NULL; }
+    if ( empty( $day             ) ) { $day = NULL; }
+    if ( empty( $tell            ) ) { $tell = NULL; }
+    if ( empty( $email           ) ) { $email = NULL; }
+    if ( empty( $university      ) ) { $university = NULL; }
+    if ( empty( $faculty         ) ) { $faculty = NULL; }
+    if ( empty( $department      ) ) { $department = NULL; }
+    if ( empty( $high_school     ) ) { $high_school = NULL; }
+    if ( empty( $seminar         ) ) { $seminar = NULL; }
+    if ( empty( $club            ) ) { $club = NULL; }
+
+    // var_dump($post_data);
+
     $form_open_data = array(
         'class'         => 'mt-4 text-left',
         'name'          => 'date',
-        'id'            => ''
+        'id'            => 'form'
     );
 
     $input_last_name_data = array(
         'class'         => 'form-control',
         'name'          => 'last_name',
         'placeholder'   => '山田',
+        'value'         =>  $last_name,
         'required'      => ''
     );
 
@@ -16,12 +37,14 @@
         'class'         => 'form-control',
         'name'          => 'first_name',
         'placeholder'   => '太郎',
+        'value'         => $first_name,
         'required'      => ''
     );
 
     $input_last_kana_name_data = array(
         'class'         => 'form-control',
         'name'          => 'last_kana_name',
+        'value'         => $last_kana_name,
         'placeholder'   => 'ヤマダ',
         'required'      => ''
     );
@@ -29,6 +52,7 @@
     $input_first_kana_name_data = array(
         'class'         => 'form-control',
         'name'          => 'first_kana_name',
+        'value'         => $first_kana_name,
         'placeholder'   => 'タロウ',
         'required'      => ''
     );
@@ -37,7 +61,7 @@
         'initial'        => '----',
         '男'           => '男',
         '女'         => '女',
-        'その他'          => 'その他',
+        'その他'          => '選択しない',
     );
 
     // 現在の年度を取得
@@ -69,6 +93,7 @@
         'class'         => 'form-control',
         'name'          => 'tell',
         'placeholder'   => '0901234XXXX',
+        'value'         => $tell,
         'required'      => ''
     );
 
@@ -76,6 +101,7 @@
         'class'         => 'form-control',
         'name'          => 'email',
         'placeholder'   => 'メールアドレス',
+        'value'         => $email,
         'required'      => ''
     );
 
@@ -97,6 +123,7 @@
         'class'         => 'form-control',
         'name'          => 'university',
         'placeholder'   => '愛媛大学',
+        'value'         => $university,
         'required'      => ''
     );
 
@@ -104,6 +131,7 @@
         'class'         => 'form-control',
         'name'          => 'faculty',
         'placeholder'   => '工学部',
+        'value'         => $faculty,
         'required'      => ''
     );
 
@@ -111,6 +139,7 @@
         'class'         => 'form-control',
         'name'          => 'department',
         'placeholder'   => '情報工学科',
+        'value'         => $department,
         'required'      => ''
     );
 
@@ -135,6 +164,7 @@
     $input_high_school_data = array(
         'class'         => 'form-control',
         'name'          => 'high_school',
+        'value'         => $high_school,
         'placeholder'   => '東高等学校',
         'required'      => ''
     );
@@ -142,15 +172,15 @@
     $input_seminar_data = array(
         'class'         => 'form-control',
         'name'          => 'seminar',
-        'placeholder'   => 'ゼミ・研究室',
-        'required'      => ''
+        'value'         => $seminar,
+        'placeholder'   => 'ゼミ・研究室'
     );
 
     $input_club_data = array(
         'class'         => 'form-control',
         'name'          => 'club',
-        'placeholder'   => 'クラブ・サークル',
-        'required'      => ''
+        'value'         => $club,
+        'placeholder'   => 'クラブ・サークル'
     );
 
     $form_checkbox_data = array(
