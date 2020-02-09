@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/mdb.min.css">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/mdb_custom.min.css">
+    <!-- DatabaseTable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <style>
     .map-container {
         overflow: hidden;
@@ -148,147 +150,41 @@
                     <h4 class="mb-2 mb-sm-0 pt-1">
                         <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">ホーム</a>
                         <span>/</span>
-                        <span>会員一覧</span>
+                        <span>イベント一覧</span>
                     </h4>
-
-                    <form class="d-flex justify-content-center">
-                        <!-- Default input -->
-                        <input type="search" placeholder="Type your query" aria-label="Search" class="form-control">
-                        <button class="btn btn-primary btn-sm my-0 p" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-
-                    </form>
 
                 </div>
 
             </div>
             <!-- Heading -->
 
-            <!--Grid row-->
-            <div class="row wow fadeIn">
-
-                <!--Grid column-->
-                <div class="col-md-12 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card content-->
-                        <div class="card-body">
-
-                            <!-- Table  -->
-                            <table class="table table-hover">
-                                <!-- Table head -->
-                                <thead class="blue-grey lighten-4">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Lorem</th>
-                                        <th>Ipsum</th>
-                                        <th>Dolor</th>
-                                    </tr>
-                                </thead>
-                                <!-- Table head -->
-
-                                <!-- Table body -->
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-                                </tbody>
-                                <!-- Table body -->
-                            </table>
-                            <!-- Table  -->
-
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-
+            <div class="card mb-4 wow fadeIn">
+                <div class="card-body">
+                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm font-weight-bold">タイトル</th>
+                                <th class="th-sm font-weight-bold">開催日</th>
+                                <th class="th-sm font-weight-bold">参加人数</th>
+                                <th class="th-sm font-weight-bold">編集</th>
+                                <th class="th-sm font-weight-bold">削除</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($event as $row): ?>
+                                <tr>
+                                    <td><?php echo $row['title']; ?></td>
+                                    <td><?php echo $row['event_hold']; ?></td>
+                                    <td><?php echo $row['people']; ?>人</td>
+                                    <td><?php echo anchor('event_edit_delete/edit?id=' . $row['id'], '編集', 'class="text-primary"')  ?></td>
+                                    <td><?php echo anchor('event_edit_delete/delete?id=' . $row['id'] , '削除', 'class="text-danger"'); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-12 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card content-->
-                        <div class="card-body">
-
-                            <!-- Table  -->
-                            <table class="table table-hover">
-                                <!-- Table head -->
-                                <thead class="blue lighten-4">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>名前</th>
-                                        <th>性別</th>
-                                        <th>生年月日</th>
-                                        <th>メールアドレス</th>
-                                        <th>電話番号</th>
-                                    </tr>
-                                </thead>
-                                <!-- Table head -->
-
-                                <!-- Table body -->
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>永井裕大郎</td>
-                                        <td>男</td>
-                                        <td>1998年2月11日</td>
-                                        <td>example@example.com</td>
-                                        <td>xxx-xxxx-xxxx</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                    </tr>
-                                </tbody>
-                                <!-- Table body -->
-                            </table>
-                            <!-- Table  -->
-
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-
-                </div>
-                <!--Grid column-->
-
             </div>
-            <!--Grid row-->
-
+        </div>
     </main>
     <!-- Main rayout -->
 
@@ -354,10 +250,21 @@
     <script type="text/javascript" src="<?php echo base_url() ?>assets/js/mdb.min.js"></script>
     <!-- Initializations -->
 
+    <!-- databaseTable -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });        
+    </script>
+
     <script type="text/javascript">
     // Animations initialization
     new WOW().init();
     </script>
+
 
 </body>
 
