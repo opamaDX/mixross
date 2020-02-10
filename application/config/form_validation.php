@@ -60,16 +60,17 @@ $name = array(
 //この名前で設定しておけばRegisterクラスのindexメソッドで勝手に呼び出されるようになります
 $config['register/index'] = array($mail, $password, $passconf, $name);
 
+// 新規登録時に用いるバリデーションルール
 $config = array(
   'sign_up' => array(
           array(
                   'field' => 'last_kana_name',
-                  'label' => '姓',
+                  'label' => 'セイ',
                   'rules' => 'regex_match[/^[ァ-ヶー]+$/u]'
           ),
           array(
                   'field' => 'first_kana_name',
-                  'label' => '名',
+                  'label' => 'メイ',
                   'rules' => 'regex_match[/^[ァ-ヶー]+$/u]'
           ),
           array(
@@ -96,7 +97,7 @@ $config = array(
                   'field' => 'tell',
                   'label' => '電話番号',
                   'rules' => 'numeric'
-           ),
+          ),
           array(
                   'field' => 'email',
                   'label' => 'メールアドレス',
@@ -105,7 +106,7 @@ $config = array(
           array(
                   'field' => 'pass',
                   'label' => 'パスワード',
-                  'rules' => 'alpha_numeric'
+                  'rules' => 'alpha_numeric|callback__check_pass'
           ),
           array(
                   'field' => 'check_pass',
