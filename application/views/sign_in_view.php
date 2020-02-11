@@ -56,13 +56,12 @@
                                 </div>
 
                                 <div class="row align-items-center mt-3">
-                                    <!-- ログインID、パスワードを記憶 -->
-                                    <div class="col-6">
-                                        <label class="form-check-label">
-                                            <?php echo form_checkbox($form_checkbox_data); ?>
-                                            <span class="color-7">ログインID,パスワードを記憶する</span>
-                                        </label>
+                                    <!-- 新規登録 -->
+                                    <div class="col-6 text-center">
+                                        <?php echo anchor('main_ctrl/load_page_sign_up', '新規登録'); ?>
                                     </div>
+                                    <!-- CSRF対策でトークンを格納 -->
+                                    <input id="token" type="hidden" name="token" value="">
 
                                     <!-- login_btn -->
                                     <div class="col-6 mt-2 mt-sm-3">
