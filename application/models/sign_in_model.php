@@ -1,6 +1,6 @@
 <?php
 
-class sign_in_model extends CI_Model
+class Sign_in_model extends CI_Model
 {
     public function sign_in($email, $password)
     {
@@ -13,6 +13,9 @@ class sign_in_model extends CI_Model
             $row = $query->row_array();
             // パスワードの確認
             if($password === $row['password']) {
+                $_SESSION['user_id']         = $row['id'];
+                $_SESSION['user_first_name'] = $row['first_name'];
+                $_SESSION['user_last_name']  = $row['last_name'];
                 return true;
             } else {
                 return false;
@@ -22,5 +25,4 @@ class sign_in_model extends CI_Model
         }
     }
 }
-
 ?>
