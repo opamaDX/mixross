@@ -27,8 +27,8 @@ $config['auth_time'] = 3600;
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '//www.mixross.com';
-// $config['base_url'] = 'http://localhost/mixross-master/mixross';
+// $config['base_url'] = '//www.mixross.com';
+$config['base_url'] = 'http://localhost/mixross-master/mixross';
 
 /*
 |--------------------------------------------------------------------------
