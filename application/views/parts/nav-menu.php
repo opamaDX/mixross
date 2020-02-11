@@ -25,10 +25,10 @@
                     <li><a href="mailto:info@example.com?subject=&body=">お問い合わせ</a></li>
                 </ul>
                 <ul class="navbar-nav ml-lg-auto">
-                    <?php if(empty($_SESSION['username'])): ?>
+                    <?php if(empty($_SESSION['user_id'])): ?>
                         <li><?php echo anchor('main_ctrl/load_page_sign_in','ログイン',$anchor_sign_in_data); ?></li>
                         <li><?php echo anchor('main_ctrl/load_page_sign_up','新規登録',$anchor_sign_up_data); ?></li>
-                    <?php elseif(isset($_SESSION['username'])): ?>
+                    <?php elseif(isset($_SESSION['user_id'])): ?>
                         <li><?php echo anchor('sign_in_ctrl/logout', 'ログアウト', $anchor_logout_data); ?></li>
                     <?php endif; ?>
                 </ul>
