@@ -55,7 +55,7 @@ class Event_up_ctrl extends CI_Controller
 
             //画像のパスが空の場合
             if(empty($full_path)) {
-                $full_path = "NO-IMAGE.png";
+                $full_path = "NO_IMAGE.png";
             }
 
             //データーベースに接続

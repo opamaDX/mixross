@@ -52,5 +52,12 @@ class Event_model extends CI_Model
         //取得したidからイベントを削除
         $this->db->delete('event', array('id' => $id));
     }
+
+    public function update($event_id)
+    {   
+        //予約人数を1人増やす
+        $sql = "UPDATE event SET people = people + 1 WHERE id = '$event_id'";
+        $this->db->query($sql);
+    }
 }
 ?>
