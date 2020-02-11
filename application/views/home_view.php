@@ -34,7 +34,7 @@
                     <li data-zanim-timeline="{}">
                         <div class="py-0">
                             <div class="background-holder"
-                                style="background-image:url(assets/images/mixross_cando_back.jpg);"> </div>
+                                style="background-image:url(<?php echo base_url(); ?>assets/images/mixross_cando_back.jpg);"> </div>
                             <div class="container">
                                 <div class="row align-items-center py-8" data-inertia='{"weight":1.5}'>
                                     <div class="col-sm-8 col-lg-7 px-5 px-sm-3">
@@ -100,7 +100,7 @@
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -130,7 +130,7 @@
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -160,7 +160,7 @@
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -190,7 +190,7 @@
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -220,7 +220,7 @@
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -250,7 +250,7 @@
                     <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-event.jpg" alt="Featured Image" />
                             <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <a href="news.html">
@@ -308,7 +308,7 @@
                     <div class="elixir-caret d-none d-lg-block"></div>
                     <div class="col-lg-6 py-3 py-lg-0 mb-0 order-lg-2" style="min-height:300px;">
                         <div class="background-holder radius-tl-secondary radius-tl-lg-0 radius-tr-secondary radius-tr-lg-0"
-                            style="background-image:url(assets/images/mixros_cando_wifi.jpg);"></div>
+                            style="background-image:url(<?php echo base_url(); ?>assets/images/mixros_cando_wifi.jpg);"></div>
                     </div>
                     <div
                         class="col-lg-6 px-lg-5 py-lg-6 p-4 my-lg-0 background-white radius-bl-secondary radius-bl-lg-0 radius-br-secondary radius-br-lg-0">
@@ -342,7 +342,7 @@
                     <div class="elixir-caret d-none d-lg-block"></div>
                     <div class="col-lg-6 py-3 py-lg-0 mb-0" style="min-height:300px;">
                         <div class="background-holder radius-tl-secondary radius-tr-secondary radius-tr-lg-0 radius-tl-lg-0 radius-bl-0 radius-bl-lg-secondary"
-                            style="background-image:url(assets/images/mixros_cando_meeting.jpg); height: 39vh;"> </div>
+                            style="background-image:url(<?php echo base_url(); ?>assets/images/mixros_cando_meeting.jpg); height: 39vh;"> </div>
                     </div>
                     <div
                         class="col-lg-6 px-lg-5 py-lg-6 p-4 my-lg-0 background-white radius-bl-secondary radius-bl-lg-0 radius-br-secondary">
@@ -486,7 +486,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -504,7 +504,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -522,7 +522,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -540,7 +540,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -558,7 +558,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -576,7 +576,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -618,22 +618,22 @@
 
                 <div class="row align-items-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
 
                     <div class="col-md-12 col-lg-12 py-0 mt-4 mt-lg-0" style="text-align: center">
