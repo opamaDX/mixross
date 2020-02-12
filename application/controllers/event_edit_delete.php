@@ -25,7 +25,7 @@ class Event_edit_delete extends CI_Controller
             $year    = $this->input->post('year');
             $month   = $this->input->post('month');
             $day     = $this->input->post('day');
-            $content = $this->input->post('content', true);
+            $content = html_escape($this->input->post('content', true));
 
             //開催日のタイムスタンプを取得
             $event_time = strtotime($year.'-'.$month.'-'.$day);

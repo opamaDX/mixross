@@ -40,7 +40,7 @@ class Event_reserve extends CI_Controller
             //予約登録のメールを送信する
             $this->email->from('fumiya5863@gmail.com', '櫻井郁也');
             $this->email->to($_SESSION['user_email']);
-            $this->email->subject('Email Test');
+            $this->email->subject('予約完了メール');
             $this->email->message($message);
             $this->email->send();
             

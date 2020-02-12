@@ -53,7 +53,13 @@ class Main_ctrl extends CI_Controller {
 	}
 
 	public function load_page_sign_in() {
-		$this->load->view('sign_in_view');
+		//CSRFトークン生成
+		$data['csrf'] = array(
+			'name' => $this->security->get_csrf_token_name(),
+            'hash' => $this->security->get_csrf_hash()
+		);
+		
+		$this->load->view('sign_in_view', $data);
 	}
 
 	public function load_page_sign_up() {

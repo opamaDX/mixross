@@ -7,11 +7,12 @@ $(function() {
         var login_btn = $('#login_btn').val();
         var email     = $('#email').val();
         var password  = $('#password').val();
+        var csrf_hash = $('#token').val();
         //ajax通信開始
         $.ajax({
             type: 'POST',
             url : 'http://localhost/mixross-master/mixross/index.php/sign_in_ctrl/login',
-            data: {login_btn: login_btn, email: email, password: password}
+            data: {login_btn: login_btn, email: email, password: password, csrf_name: csrf_hash}
         }).done(function(data) {
             //PHPでemailとpasswodrがあっている場合に
             if(data == true) {

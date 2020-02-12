@@ -22,7 +22,7 @@ class Event_up_ctrl extends CI_Controller
             //セッションにイベントの内容を取得
             $_SESSION['title']      = html_escape($title);
             $_SESSION['event_hold'] = $event_hold;
-            $_SESSION['content']    = $content;
+            $_SESSION['content']    = html_escape($content);
 
             //確認画面に移動
             redirect(site_url('admin_ctrl/load_page_event_up_confirm'));

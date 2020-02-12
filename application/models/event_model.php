@@ -56,8 +56,8 @@ class Event_model extends CI_Model
     public function update($event_id)
     {   
         //予約人数を1人増やす
-        $sql = "UPDATE event SET people = people + 1 WHERE id = '$event_id'";
-        $this->db->query($sql);
+        $sql = "UPDATE event SET people = people + 1 WHERE id = ?";
+        $this->db->query($sql, array($event_id));
     }
 }
 ?>

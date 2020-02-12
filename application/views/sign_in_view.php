@@ -27,11 +27,11 @@
                         <div class="background-white radius-secondary p-4 p-md-5 mt-5" data-zanim='{"delay":0.1}'>
                             <h4 class="text-uppercase fs-0 fs-md-1">みくろすにログイン</h4>
                             
-                            <!-- 入力ミスがる場合 -->
+                            <!-- 入力ミスがある場合 -->
                             <small id="error" style="color:red"></small>
                             
-                            <!-- form_start -->
-                            <?php echo form_open('sign_in_ctrl/login', $form_open_data); ?>
+                            <!-- form_start 隠しフィールドにCSRFトークンを格納 -->
+                            <?php echo form_open('sign_in_ctrl/login', $form_open_data, $form_hidden_data); ?>
 
                                 <div class="row align-items-center">
                                     <!-- email -->
@@ -60,8 +60,6 @@
                                     <div class="col-6 text-center">
                                         <?php echo anchor('main_ctrl/load_page_sign_up', '新規登録'); ?>
                                     </div>
-                                    <!-- CSRF対策でトークンを格納 -->
-                                    <input id="token" type="hidden" name="token" value="">
 
                                     <!-- login_btn -->
                                     <div class="col-6 mt-2 mt-sm-3">

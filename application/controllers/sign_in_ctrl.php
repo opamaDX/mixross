@@ -7,13 +7,19 @@ class Sign_in_ctrl extends CI_Controller
     {
         //変数の初期化
         $err_message = array();
+
+        //CSRF対策
+        if($this->input->method(true) !== 'POST') {
+            show_404();
+        }
         
         //login_btnが押された時
         if($this->input->post('login_btn')) {
 
             //XSSフィルタでemailとpasswordを受け取る
-            $email = $this->input->post('email', true);
-            $password = $this->input->post('password', true);
+            $email    = $this->input->post('email', true);
+            // パスワードはハッシュ化させておく
+            $password = $this->input->post('password', true); 
 
             //emailとpasswordのバリテーション
             if(!preg_match('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/', $email)) {
@@ -30,6 +36,8 @@ class Sign_in_ctrl extends CI_Controller
                 $sign_in = $this->sign_in_model->sign_in($email, $password);
                 // emailとpasswordがあっている場合
                 if($sign_in === true) {
+                    //セッションID固定攻撃対策
+                    session_regenerate_id(true);
                     $_SESSION['user_email'] = $email;
                     echo true;
                     exit();
