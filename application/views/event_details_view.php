@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="col-12 mt-6 mb-4 mt-lg-7">
                             <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <h4 data-zanim='{"delay":0.1}'><?php echo $row['title']; ?></h4>
+                                <h4 data-zanim='{"delay":0.1}' class="border-bottom"><?php echo $row['title']; ?></h4>
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -42,7 +42,7 @@
                                     <img class="radius-tr-secondary radius-tl-secondary" src="<?php echo base_url(); ?>assets/upload_images/<?php echo $row['file_path']; ?>" style="width: 1248px;"alt="">
                                 </div>
                                 <div class="col-12 pt-2">
-                                    <div class="background-white p-5 radius-secondary">
+                                    <div class="background-white p-5">
                                         <?php echo nl2br($row['content']); ?></p>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                             <h5 class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>みくろすでできること </h5>
                                             <p class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>Wi-Fi・コンセント使いたい放題</p>
                                             <p class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>ミーティングができる</p>
-                                            <p class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>イベントの開催に</p>
+                                            <p class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>イベントの開催</p>
                                         </div>
                                     </div>
                                 </div>
@@ -65,9 +65,9 @@
                                 <div class="col">
                                     <div class="background-white pr-5 pb-5 pl-5 pt-5 radius-secondary">
                                         <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                            <p>
+                                            <p class="text-capitalize mb-0" data-zanim='{"delay":0.1}'>
                                                 イベントに参加した人達から満足しました。とうい声を多数よせてもらっています。
-                                                皆さん気軽に参加してみて下さい。
+                                                皆さん気軽にぜひお友達と参加してみて下さい!!
                                             </p>
                                         </div>
                                     </div>

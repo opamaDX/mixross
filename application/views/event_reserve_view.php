@@ -33,8 +33,9 @@
                     <h2 class="mb-4">参加予約を確定してもいいですか？</hh2>
                     <h2>参加予約を確定した後にメールを送信します</h2>
                 </div>
-                <form action="<?php echo site_url('event_reserve/reserve_confirm'); ?>" method="post">
-                    <button class="btn btn-primary btn-block" name="reserve_confirm">参加予約確定</button>
+                <p id="send_reserve" class="lead text-center"></p>
+                <form id="form" action="<?php echo site_url('event_reserve/reserve_confirm'); ?>" method="post">
+                    <button id="reserve_confirm" class="btn btn-primary btn-block" name="reserve_confirm">参加予約確定</button>
                 </form>
             </div>
         </section>

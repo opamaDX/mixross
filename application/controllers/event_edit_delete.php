@@ -59,6 +59,29 @@ class Event_edit_delete extends CI_Controller
             redirect('admin_ctrl/load_page_event_list');
         }
     }
+
+    public function delete_people()
+    {
+        //XSSフィルタを通してidを受け取りセッションに入れる
+        $_SESSION['delete_people_id'] = $this->input->get('id', true);
+        // イベント参加者削除ページに移動
+        redirect('admin_ctrl/load_page_event_delete_people_confirm');
+    }
+
+    public function delete_people_confirm()
+    {
+        if(isset($_POST['delete_people_btn'])) {
+            $event_id = $this->input->post('event_id', true);
+            //データベースから参加者を削除
+            $this->event_model->event_delete_people($_SESSION['delete_people_id']);
+            //データベースから参加人数を1人減らす
+            $this->event_model->event_update_people($event_id);
+            
+            //セッションに格納しているIDを削除し、参加者リストのページに移動
+            unset($_SESSION['delete_people_id']);
+            redirect('admin_ctrl/load_page_event_list');
+        }
+    }
 }
 
 ?>

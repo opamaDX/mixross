@@ -91,7 +91,7 @@
                     </a>
                 <?php endforeach; ?>
 
-                    <div class="col-md-12 col-lg-12 py-0 mt-4 mt-lg-0" style="text-align: center">
+                    <!-- <div class="col-md-12 col-lg-12 py-0 mt-4 mt-lg-0" style="text-align: center">
                         <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                             <div class="overflow-hidden">
                                 <div class="zopacity" data-zanim='{"delay":0.2}'>
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

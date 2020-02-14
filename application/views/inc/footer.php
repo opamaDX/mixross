@@ -14,6 +14,15 @@
 <script src="<?php echo base_url(); ?>assets/lib/flexslider/jquery.flexslider-min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/core.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+<!-- 予約フォームの2重クリック防止 -->
+<script>
+    $(function() {
+        $('#form').on('submit', function() {
+            $('#reserve_confirm').hide();
+            $('#send_reserve').text('送信中...');
+        });
+    });
+</script>
 </body>
 
 </html>

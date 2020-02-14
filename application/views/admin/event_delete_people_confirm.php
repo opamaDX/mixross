@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/mdb.min.css">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/mdb_custom.min.css">
-    <!-- DatabaseTable -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <style>
     .map-container {
         overflow: hidden;
@@ -150,7 +148,7 @@
                     <h4 class="mb-2 mb-sm-0 pt-1">
                         <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">ホーム</a>
                         <span>/</span>
-                        <span>イベント一覧</span>
+                        <span>イベント参加者削除確認</span>
                     </h4>
 
                 </div>
@@ -158,35 +156,48 @@
             </div>
             <!-- Heading -->
 
-            <div class="card mb-4 wow fadeIn">
-                <div class="card-body">
-                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th class="th-sm font-weight-bold">タイトル</th>
-                                <th class="th-sm font-weight-bold">開催日</th>
-                                <th class="th-sm font-weight-bold">参加人数</th>
-                                <th class="th-sm font-weight-bold">参加者名簿</th>
-                                <th class="th-sm font-weight-bold">編集</th>
-                                <th class="th-sm font-weight-bold">削除</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($event as $row): ?>
-                                <tr>
-                                    <td><?php echo $row['title']; ?></td>
-                                    <td><?php echo $row['event_hold']; ?></td>
-                                    <td><?php echo $row['people']; ?>人</td>
-                                    <td><?php echo anchor('admin_ctrl/load_page_event_reserve?id='.$row['id'], '参加者名簿', 'class="text-primary"'); ?></td>
-                                    <td><?php echo anchor('event_edit_delete/edit?id='.$row['id'], '編集', 'class="text-primary"'); ?></td>
-                                    <td><?php echo anchor('event_edit_delete/delete?id='.$row['id'] , '削除', 'class="text-danger"'); ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-md-12 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <?php foreach($event_delete_people as $row): ?>
+                                <div class="row">
+                                    <div class="col-xm-12 ml-4 mr-4 pt-1">
+                                        <label>名前</label>
+                                        <h3><?php echo $row['name']; ?></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xm-12 ml-4 mr-4 pt-1">
+                                        <label>メールアドレス</label>
+                                        <p class="lead"><?php echo $row['email']; ?></p>
+                                    </div>
+                                </div>
+                            <form action="<?php echo site_url('event_edit_delete/delete_people_confirm'); ?>" method="post">
+                                <input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block ml-3 mr-3" name="delete_people_btn">イベント参加者削除確認</button>
+                                </div>
+                            </form>
+                            <!-- <?php endforeach; ?> -->
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
                 </div>
+                <!--Grid column-->
+
             </div>
-        </div>
+            <!--Grid row-->
+
     </main>
     <!-- Main rayout -->
 
@@ -251,22 +262,12 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="<?php echo base_url() ?>assets/js/mdb.min.js"></script>
     <!-- Initializations -->
-
-    <!-- databaseTable -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });        
-    </script>
-
+    <!-- sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
     // Animations initialization
     new WOW().init();
     </script>
-
 
 </body>
 
