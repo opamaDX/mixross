@@ -14,5 +14,10 @@
             <a class="ml-2 mb-0 fs--1 d-inline color-white fw-700"
                 href="tel:070-5303-9304">070-5303-9304</a>
         </div>
+        <div class="col-auto">
+            <?php if(isset($_SESSION['user_id'])): ?>
+                <a class="ml-2 mb-0 fs--1 d-inline color-white fw-700"><?php echo $_SESSION['user_last_name'].$_SESSION['user_first_name'] ?>さん</a>
+            <?php endif; ?>
+        </div>
     </div>
 </div>

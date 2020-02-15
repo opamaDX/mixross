@@ -34,7 +34,7 @@
                     <li data-zanim-timeline="{}">
                         <div class="py-0">
                             <div class="background-holder"
-                                style="background-image:url(assets/images/mixross_cando_back.jpg);"> </div>
+                                style="background-image:url(<?php echo base_url(); ?>assets/images/mixross_cando_back.jpg);"> </div>
                             <div class="container">
                                 <div class="row align-items-center py-8" data-inertia='{"weight":1.5}'>
                                     <div class="col-sm-8 col-lg-7 px-5 px-sm-3">
@@ -97,191 +97,49 @@
                 </div>
 
                 <div class="row mt-lg-6">
-                    <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
-                        <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
-                            <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <div class="overflow-hidden">
-                                    <a href="news.html">
-                                        <h5 data-zanim='{"delay":0}'>遊びのプロと本気で遊ぶ企画！</h5>
-                                    </a>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="color-7" data-zanim='{"delay":0.1}'>人・団体名</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="mt-3" data-zanim='{"delay":0.2}'>詳細文章</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <div class="d-inline-block" data-zanim='{"delay":0.3}'>
-                                        <a class="d-flex align-items-center" href="#">もっと詳しく
-                                            <div class="overflow-hidden ml-2"
-                                                data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
-                                                <span class="d-inline-block">&xrarr;</span>
+                    <!-- イベント -->
+                    <?php $i = 0; ?>
+                    <?php foreach($event as $row): ?>
+                        <?php if($i < 6): ?>
+                            <a href="<?php echo site_url('main_ctrl/load_page_event_details?id='.$row['id']); ?>">
+                            <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-3">
+                                <div class="background-white pb-4 h-100 radius-secondary">
+                                    <img class="w-100 radius-tr-secondary radius-tl-secondary"
+                                        src="<?php echo base_url(); ?>assets/upload_images/<?php echo $row['file_path']; ?>" alt="Featured Image" />
+                                    <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                                        <div class="overflow-hidden">
+                                            <a href="<?php echo site_url('main_ctrl/load_page_event_details?id='.$row['id']); ?>">
+                                                <h5 data-zanim='{"delay":0}'><?php echo $row['title']; ?></h5>
+                                            </a>
+                                        </div>
+                                        <div class="mb-2 overflow-hidden">
+                                            <span class="mt-3" data-zanim='{"delay":0.2}'>開催日</span>
+                                            <strong data-zanim='{"delay":0.2}'><?php echo  $row['event_hold']; ?></strong>
+                                        </div>
+                                        <div class="overflow-hidden">
+                                            <div class="d-inline-block" data-zanim='{"delay":0.3}'>
+                                                <a class="d-flex align-items-center" href="<?php echo site_url('main_ctrl/load_page_event_details?id='.$row['id']); ?>">もっと詳しく
+                                                    <div class="overflow-hidden ml-2"
+                                                        data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
+                                                        <span class="d-inline-block">&xrarr;</span>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
-                        <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
-                            <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <div class="overflow-hidden">
-                                    <a href="news.html">
-                                        <h5 data-zanim='{"delay":0}'>就活相談会！</h5>
-                                    </a>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="color-7" data-zanim='{"delay":0.1}'>人・団体名</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="mt-3" data-zanim='{"delay":0.2}'>詳細文章</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <div class="d-inline-block" data-zanim='{"delay":0.3}'>
-                                        <a class="d-flex align-items-center" href="#">もっと詳しく
-                                            <div class="overflow-hidden ml-2"
-                                                data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
-                                                <span class="d-inline-block">&xrarr;</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
-                        <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
-                            <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <div class="overflow-hidden">
-                                    <a href="news.html">
-                                        <h5 data-zanim='{"delay":0}'>【1,2年⽣限定】就活相談会！</h5>
-                                    </a>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="color-7" data-zanim='{"delay":0.1}'>人・団体名</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="mt-3" data-zanim='{"delay":0.2}'>詳細文章</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <div class="d-inline-block" data-zanim='{"delay":0.3}'>
-                                        <a class="d-flex align-items-center" href="#">もっと詳しく
-                                            <div class="overflow-hidden ml-2"
-                                                data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
-                                                <span class="d-inline-block">&xrarr;</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
-                        <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
-                            <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <div class="overflow-hidden">
-                                    <a href="news.html">
-                                        <h5 data-zanim='{"delay":0}'>スキルアップセミナー</h5>
-                                    </a>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="color-7" data-zanim='{"delay":0.1}'>人・団体名</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="mt-3" data-zanim='{"delay":0.2}'>詳細文章</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <div class="d-inline-block" data-zanim='{"delay":0.3}'>
-                                        <a class="d-flex align-items-center" href="#">もっと詳しく
-                                            <div class="overflow-hidden ml-2"
-                                                data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
-                                                <span class="d-inline-block">&xrarr;</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
-                        <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
-                            <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <div class="overflow-hidden">
-                                    <a href="news.html">
-                                        <h5 data-zanim='{"delay":0}'>自己分析</h5>
-                                    </a>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="color-7" data-zanim='{"delay":0.1}'>人・団体名</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="mt-3" data-zanim='{"delay":0.2}'>詳細文章</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <div class="d-inline-block" data-zanim='{"delay":0.3}'>
-                                        <a class="d-flex align-items-center" href="#">もっと詳しく
-                                            <div class="overflow-hidden ml-2"
-                                                data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
-                                                <span class="d-inline-block">&xrarr;</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 py-0 mt-4 mt-lg-0">
-                        <div class="background-white pb-4 h-100 radius-secondary">
-                            <img class="w-100 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-event.jpg" alt="Featured Image" />
-                            <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                                <div class="overflow-hidden">
-                                    <a href="news.html">
-                                        <h5 data-zanim='{"delay":0}'>サマーインターン攻略法！</h5>
-                                    </a>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="color-7" data-zanim='{"delay":0.1}'>人・団体名</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="mt-3" data-zanim='{"delay":0.2}'>詳細文章</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <div class="d-inline-block" data-zanim='{"delay":0.3}'>
-                                        <a class="d-flex align-items-center" href="#">もっと詳しく
-                                            <div class="overflow-hidden ml-2"
-                                                data-zanim='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
-                                                <span class="d-inline-block">&xrarr;</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            </a>
+                            <?php $i++; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <!-- イベント終了 -->
 
                     <div class="col-md-12 col-lg-12 py-0 mt-4 mt-lg-0" style="text-align: center">
                         <div class="px-4 pt-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                             <div class="overflow-hidden">
                                 <div class="zopacity" data-zanim='{"delay":0.2}'>
-                                    <a class="btn btn-primary mr-3 mt-3" href="micros_event.html">もっとみる
+                                    <a class="btn btn-primary mr-3 mt-3" href="<?php echo site_url('main_ctrl/load_page_event'); ?>">もっとみる
                                         <span class="fa fa-chevron-right ml-2"></span>
                                     </a>
                                 </div>
@@ -308,7 +166,7 @@
                     <div class="elixir-caret d-none d-lg-block"></div>
                     <div class="col-lg-6 py-3 py-lg-0 mb-0 order-lg-2" style="min-height:300px;">
                         <div class="background-holder radius-tl-secondary radius-tl-lg-0 radius-tr-secondary radius-tr-lg-0"
-                            style="background-image:url(assets/images/mixros_cando_wifi.jpg);"></div>
+                            style="background-image:url(<?php echo base_url(); ?>assets/images/mixros_cando_wifi.jpg);"></div>
                     </div>
                     <div
                         class="col-lg-6 px-lg-5 py-lg-6 p-4 my-lg-0 background-white radius-bl-secondary radius-bl-lg-0 radius-br-secondary radius-br-lg-0">
@@ -342,7 +200,7 @@
                     <div class="elixir-caret d-none d-lg-block"></div>
                     <div class="col-lg-6 py-3 py-lg-0 mb-0" style="min-height:300px;">
                         <div class="background-holder radius-tl-secondary radius-tr-secondary radius-tr-lg-0 radius-tl-lg-0 radius-bl-0 radius-bl-lg-secondary"
-                            style="background-image:url(assets/images/mixros_cando_meeting.jpg); height: 39vh;"> </div>
+                            style="background-image:url(<?php echo base_url(); ?>assets/images/mixros_cando_meeting.jpg); height: 39vh;"> </div>
                     </div>
                     <div
                         class="col-lg-6 px-lg-5 py-lg-6 p-4 my-lg-0 background-white radius-bl-secondary radius-bl-lg-0 radius-br-secondary">
@@ -486,7 +344,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -504,7 +362,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -522,7 +380,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4 mt-lg-0">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -540,7 +398,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -558,7 +416,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -576,7 +434,7 @@
                     <div class="col-sm-6 col-lg-4 mt-4">
                         <div class="background-white pb-4 h-100 radius-secondary">
                             <img class="mb-4 radius-tr-secondary radius-tl-secondary"
-                                src="assets/images/mixross-member.jpg" alt="Profile Picture" />
+                                src="<?php echo base_url(); ?>assets/images/mixross-member.jpg" alt="Profile Picture" />
                             <div class="px-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                                 <div class="overflow-hidden">
                                     <h5 data-zanim='{"delay":0}'>名前</h5>
@@ -618,22 +476,22 @@
 
                 <div class="row align-items-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
                     <div class="col-4 col-md-2 my-3 overflow-hidden">
-                        <img src="assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
+                        <img src="<?php echo base_url(); ?>assets/images/partner/mixross-logo.png" alt="" data-zanim="{}" />
                     </div>
 
                     <div class="col-md-12 col-lg-12 py-0 mt-4 mt-lg-0" style="text-align: center">

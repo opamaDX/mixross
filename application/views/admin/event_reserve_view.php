@@ -150,7 +150,7 @@
                     <h4 class="mb-2 mb-sm-0 pt-1">
                         <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">ホーム</a>
                         <span>/</span>
-                        <span>イベント一覧</span>
+                        <span>イベント参加者一覧</span>
                     </h4>
 
                 </div>
@@ -163,23 +163,19 @@
                     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="th-sm font-weight-bold">タイトル</th>
-                                <th class="th-sm font-weight-bold">開催日</th>
-                                <th class="th-sm font-weight-bold">参加人数</th>
-                                <th class="th-sm font-weight-bold">参加者名簿</th>
-                                <th class="th-sm font-weight-bold">編集</th>
+                                <th class="th-sm font-weight-bold">名前</th>
+                                <th class="th-sm font-weight-bold">mail</th>
+                                <th class="th-sm font-weight-bold">登録時間</th>
                                 <th class="th-sm font-weight-bold">削除</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($event as $row): ?>
+                            <?php foreach($event_reserve as $row): ?>
                                 <tr>
-                                    <td><?php echo $row['title']; ?></td>
-                                    <td><?php echo $row['event_hold']; ?></td>
-                                    <td><?php echo $row['people']; ?>人</td>
-                                    <td><?php echo anchor('admin_ctrl/load_page_event_reserve?id='.$row['id'], '参加者名簿', 'class="text-primary"'); ?></td>
-                                    <td><?php echo anchor('event_edit_delete/edit?id='.$row['id'], '編集', 'class="text-primary"'); ?></td>
-                                    <td><?php echo anchor('event_edit_delete/delete?id='.$row['id'] , '削除', 'class="text-danger"'); ?></td>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['email']; ?></td>
+                                    <td><?php echo $row['date']; ?></td>
+                                    <td><?php echo anchor('event_edit_delete/delete_people?id='.$row['id'] , '削除', 'class="text-danger"'); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

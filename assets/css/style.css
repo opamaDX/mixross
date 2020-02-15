@@ -311,9 +311,10 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+/* ハンバーガメニュー修正のため、値を-1.2remから-0.5remに変更 */
 @media (max-width: 61.99em) {
   .znav-container ul li a:not(.btn) {
-    margin-left: -1.2rem;
+    margin-left: -0.5rem;
   }
 }
 

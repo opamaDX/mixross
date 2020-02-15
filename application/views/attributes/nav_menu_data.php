@@ -12,4 +12,8 @@
         'id'            => '',
         'target'        => '_blank'
     );
+
+    $anchor_logout_data = array(
+        'class'         => 'btn btn-outline-primary btn-capsule btn-sm border-2x fw-700',
+    );
 ?>
