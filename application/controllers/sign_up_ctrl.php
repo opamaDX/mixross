@@ -10,7 +10,6 @@ class Sign_up_ctrl extends CI_Controller {
 
 	public function conf() {
 
-		$this->load->helper('cookie');
 		$this->load->library('form_validation');
 
 		// XSSフィルタを通して、POST値を受け取る
@@ -26,8 +25,8 @@ class Sign_up_ctrl extends CI_Controller {
 				// 確認画面移行
 				$this->load->view('sign_up_conf_view',$post_data);
 		}
-
 	}
+
 
 	public function  complete() {
 
@@ -42,7 +41,8 @@ class Sign_up_ctrl extends CI_Controller {
 
 		// 仮テーブルにデータを格納する
 		$birthday = $this->sign_up_model->create_birthday();
-		$this->sign_up_model->pre_regist($url_token,$birthday);
+		$graduate_date = $this->sign_up_model->create_graduate();
+		$this->sign_up_model->pre_regist($url_token,$birthday,$graduate_date);
 
 		// 仮登録のメールを送信する
         $this->email->from('marumori.0211@gmail.com', '永井裕大郎');
@@ -90,6 +90,7 @@ class Sign_up_ctrl extends CI_Controller {
 		}
 	}
 
+	// 独自のバリデーションルール
 	// パスワードが一致していない場合Falseを返す
 	public function _check_pass($pass) {
 

@@ -28,7 +28,6 @@
                             <h4 class="text-uppercase fs-0 fs-md-1">新規アカウント登録</h4>
 
                             <?php
-                                // form Start
                                 echo form_open('sign_up_ctrl/conf',$form_open_data);
                             ?>
                             <div class="row align-items-center">

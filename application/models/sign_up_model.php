@@ -9,18 +9,28 @@ class Sign_up_model extends CI_Model {
     }
 
     // 仮テーブルにデータを格納する
-    public function pre_regist($url_token,$birthday) {
+    public function pre_regist($url_token,$birthday,$graduate_date) {
+
+        var_dump($graduate_date);
+        var_dump($birthday);
 
         $pre_user_data = array(
-            'url_token' => $url_token,
-            'last_name' => $this->session->userdata('last_name'),
-            'last_kana_name' => $this->session->userdata('last_kana_name'),
-            'first_name' => $this->session->userdata('first_name'),
+            'url_token'       => $url_token,
+            'last_name'       => $this->session->userdata('last_name'),
+            'last_kana_name'  => $this->session->userdata('last_kana_name'),
+            'first_name'      => $this->session->userdata('first_name'),
             'first_kana_name' => $this->session->userdata('first_kana_name'),
-            'gender' => $this->session->userdata('gender'),
-            'birthday' => $birthday,
-            'email' => $this->session->userdata('email'),
-            'password' => password_hash($this->session->userdata('pass'), PASSWORD_DEFAULT)
+            'gender'          => $this->session->userdata('gender'),
+            'birthday'        => $birthday,
+            'email'           => $this->session->userdata('email'),
+            'password'        => password_hash($this->session->userdata('pass'), PASSWORD_DEFAULT),
+            'university'      => $this->session->userdata('university'),
+            'faculty'         => $this->session->userdata('faculty'),
+            'department'      => $this->session->userdata('department'),
+            'graduate_date'   => $graduate_date,
+            'high_school'     => $this->session->userdata('high_school'),
+            'seminar'         => $this->session->userdata('seminar'),
+            'club'            => $this->session->userdata('club')
         );
 
         $this->db->insert('pre_users', $pre_user_data);
@@ -86,8 +96,22 @@ class Sign_up_model extends CI_Model {
         $month = $this->session->userdata('month');
         $day = $this->session->userdata('day');
 
-        $date = date('Y-m-d', mktime(0, 0, 0, $month, $day, $year));
+        echo "誕生日は".$year.$month.$day."\n";
 
-        return $date;
+        $birthday = date('Y-m-d', mktime(0, 0, 0, $month, $day, $year));
+
+        return $birthday;
+    }
+
+    // フォーム入力された卒業日の統合
+    public function create_graduate() {
+        $graduate_year = $this->session->userdata('graduate_year');
+        $graduate_month = $this->session->userdata('graduate_month');
+
+        echo "卒業日は".$graduate_year.$graduate_month."\n";
+
+        $graduate_date = date('Y-m-d', mktime(0, 0, 0, $graduate_month, 1 ,$graduate_year));
+
+        return $graduate_date;
     }
 }
