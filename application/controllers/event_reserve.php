@@ -33,6 +33,7 @@ class Event_reserve extends CI_Controller
             //eventの参加人数を増やす
             //eventに参加する人の名前とメールアドレスと登録した日時をデータベースに記入
             $date = date('Y-m-d');
+            
             $this->event_model->update($event_id, $_SESSION['user_first_name'], $_SESSION['user_last_name'], $_SESSION['user_email'], $date);
 
             //emailライブラリをロード
