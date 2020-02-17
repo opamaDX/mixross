@@ -1,13 +1,11 @@
 <?php
 
+    // POSTされていない場合NULL
     if ( empty( $last_name       ) ) { $last_name = NULL; }
     if ( empty( $first_name      ) ) { $first_name = NULL; }
     if ( empty( $last_kana_name  ) ) { $last_kana_name = NULL; }
     if ( empty( $first_kana_name ) ) { $first_kana_name = NULL; }
     if ( empty( $gender          ) ) { $gender = NULL; }
-    if ( empty( $year            ) ) { $year = NULL; }
-    if ( empty( $month           ) ) { $month = NULL; }
-    if ( empty( $day             ) ) { $day = NULL; }
     if ( empty( $tell            ) ) { $tell = NULL; }
     if ( empty( $email           ) ) { $email = NULL; }
     if ( empty( $university      ) ) { $university = NULL; }
@@ -17,7 +15,12 @@
     if ( empty( $seminar         ) ) { $seminar = NULL; }
     if ( empty( $club            ) ) { $club = NULL; }
 
-    // var_dump($post_data);
+    // view表示用の変数定義
+    if ( empty( $year            ) ) { $year = 'initial'; }
+    if ( empty( $month           ) ) { $month = 'initial'; }
+    if ( empty( $day             ) ) { $day = 'initial'; }
+    if ( empty( $graduate_year   ) ) { $graduate_year = 'initial'; }
+    if ( empty( $graduate_month  ) ) { $graduate_month = 'initial'; }
 
     $form_open_data = array(
         'class'         => 'mt-4 text-left',
@@ -145,6 +148,7 @@
 
     // 現在の年度を取得
     $current_year = date('Y');
+
     // 配列初期化
     $select_graduate_year_data  = array( 'initial' => '----' );
     $select_graduate_month_data = array( 'initial' => '----' );

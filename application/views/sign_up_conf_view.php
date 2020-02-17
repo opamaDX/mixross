@@ -49,16 +49,50 @@
                                     <?php echo $year.'年'.$month.'月'.$day.'日'; ?>
                                 </div>
 
-                                <!-- row5 メールアドレス -->
+                                <!-- ro5 電話番号 -->
+                                <div class="color-7 col-12 small mt-4">電話番号</div>
+                                <div class="col-12 mt-4">
+                                    <?php echo $tell ?>
+                                </div>
+
+                                <!-- row6 メールアドレス -->
                                 <div class="color-7 col-12 small mt-4">メールアドレス</div>
                                 <div class="col-12 mt-4"><?php echo $email; ?></div>
 
-                                <!-- row6 戻るボタン-->
+                                <!-- row7 大学名 -->
+                                <div class="color-7 col-12 small mt-4">大学名</div>
+                                <div class="col-12 mt-4"><?php echo $university; ?></div>
+
+                                <!-- row8 学部名 -->
+                                <div class="color-7 col-12 small mt-4">学部名</div>
+                                <div class="col-12 mt-4"><?php echo $faculty; ?></div>
+
+                                <!-- row9 学科名 -->
+                                <div class="color-7 col-12 small mt-4">学科名</div>
+                                <div class="col-12 mt-4"><?php echo $department; ?></div>
+
+                                <!-- row10 卒業予定年 -->
+                                <div class="color-7 col-12 small mt-4">卒業予定年</div>
+                                <div class="col-12 mt-4"><?php echo $graduate_year."年".$graduate_month."月"; ?></div>
+
+                                <!-- row11 出身高校名 -->
+                                <div class="color-7 col-12 small mt-4">出身高校名</div>
+                                <div class="col-12 mt-4"><?php echo $high_school; ?></div>
+
+                                <!-- row12 ゼミ・研究室 -->
+                                <div class="color-7 col-12 small mt-4">ゼミ・研究室</div>
+                                <div class="col-12 mt-4"><?php echo $seminar; ?></div>
+
+                                <!-- row13 クラブ・サークル -->
+                                <div class="color-7 col-12 small mt-4">クラブ・サークル</div>
+                                <div class="col-12 mt-4"><?php echo $club; ?></div>
+
+                                <!-- row14 戻るボタン-->
                                 <div class="col-md-6 mt-3">
-                                    <button class="btn btn-primary btn-block" type="button" onclick="history.back()">戻る</button>
+                                    <button class="btn btn-primary btn-block" type="button" onclick=" location.href='conf' ">戻る</button>
                                 </div>
 
-                                <!-- row7 登録ボタン-->
+                                <!-- row15 登録ボタン-->
                                 <div class="col-md-6 mt-3">
                                     <button class="btn btn-primary btn-block" type="submit" id="submit" onclick = " location.href='complete' ">登録</button>
                                 </div>

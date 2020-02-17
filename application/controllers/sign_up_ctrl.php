@@ -10,12 +10,10 @@ class Sign_up_ctrl extends CI_Controller {
 
 	public function conf() {
 
-		$this->load->helper('cookie');
 		$this->load->library('form_validation');
 
 		// XSSフィルタを通して、POST値を受け取る
 		$post_data = $this->input->post(NULL, TRUE);
-		var_dump($post_data);
 
 		// POST値をSESSIONに格納する
 		$this->session->set_userdata($post_data);
@@ -23,14 +21,12 @@ class Sign_up_ctrl extends CI_Controller {
 		if ( $this->form_validation->run('sign_up') == FALSE ) {
 				// 元の画面に戻る
 				$this->load->view('sign_up_view',$post_data);
-				echo "失敗";
 		} else {
 				// 確認画面移行
-		        $this->load->view('sign_up_conf_view',$post_data);
-				echo "成功";
+				$this->load->view('sign_up_conf_view',$post_data);
 		}
-
 	}
+
 
 	public function  complete() {
 
@@ -45,7 +41,8 @@ class Sign_up_ctrl extends CI_Controller {
 
 		// 仮テーブルにデータを格納する
 		$birthday = $this->sign_up_model->create_birthday();
-		$this->sign_up_model->pre_regist($url_token,$birthday);
+		$graduate_date = $this->sign_up_model->create_graduate();
+		$this->sign_up_model->pre_regist($url_token,$birthday,$graduate_date);
 
 		// 仮登録のメールを送信する
         $this->email->from('marumori.0211@gmail.com', '永井裕大郎');
@@ -84,12 +81,26 @@ class Sign_up_ctrl extends CI_Controller {
 	// 独自のバリデーションルール
 	// 選択肢が「----」(initial)の場合Falseを返す
 	public function _not_hyphen($choice) {
-		
+
 		if ( $choice == "initial" ) {
 			$this->form_validation->set_message('_not_hyphen', '選択肢を選択してください。');
 			return false;
 		} else {
 			return true;
+		}
+	}
+
+	// 独自のバリデーションルール
+	// パスワードが一致していない場合Falseを返す
+	public function _check_pass($pass) {
+
+        $check_pass = $this->input->post('check_pass');
+
+        if ( $pass == $check_pass) {
+            return true;
+        } else {
+			$this->form_validation->set_message('_check_pass', 'パスワードが一致していません.');
+			return false;
 		}
 	}
 }
