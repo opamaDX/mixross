@@ -14,6 +14,9 @@ class Event_up_ctrl extends CI_Controller
             $day     = $this->input->post('day');
             $content = $this->input->post('content', true);
             
+            //日本時間を設定
+            date_default_timezone_set('Asia/Tokyo');
+            
             //開催日のタイムスタンプを取得
             $event_time = strtotime($year.'-'.$month.'-'. $day);
             //開催日の日付を取得
@@ -24,8 +27,19 @@ class Event_up_ctrl extends CI_Controller
             $_SESSION['event_hold'] = $event_hold;
             $_SESSION['content']    = html_escape($content);
 
-            //確認画面に移動
-            redirect(site_url('admin_ctrl/load_page_event_up_confirm'));
+            //フォームバリテーションをロード
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_rules('title', 'イベントタイトル', 'required');
+            $this->form_validation->set_rules('content', 'イベント概要', 'required');
+            
+            if($this->form_validation->run()) {
+                //確認画面に移動
+                redirect(site_url('admin_ctrl/load_page_event_up_confirm'));
+            } else {
+                //イベント投稿画面に移動
+                redirect(site_url('admin_ctrl/load_page_event_update'));
+            }
         }
     }
 

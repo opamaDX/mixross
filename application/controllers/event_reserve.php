@@ -6,7 +6,7 @@ class Event_reserve extends CI_Controller
     public function index()
     {
         //ログインした状態で、セッションのuser_idを取得している場合
-        if($_SESSION['user_id']) {
+        if(isset($_SESSION['user_id'])) {
             //予約ボタンが押された時
             if(isset($_POST['reserve'])) {
                 //イベントidを取得しセッションに格納した後に予約確認画面に移動

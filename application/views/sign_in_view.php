@@ -30,7 +30,6 @@
                             <!-- 入力ミスがある場合 -->
                             <small id="error" style="color:red"></small>
                             
-                            <!-- form_start 隠しフィールドにCSRFトークンを格納 -->
                             <?php echo form_open('sign_in_ctrl/login', $form_open_data, $form_hidden_data); ?>
 
                                 <div class="row align-items-center">
@@ -66,7 +65,7 @@
                                         <?php echo form_submit($form_login_btn_data); ?>
                                     </div>
                                 </div>
-                            </form>
+                            <?php echo form_colse(); ?>
                             <!-- form_end -->
 
                         </div>
