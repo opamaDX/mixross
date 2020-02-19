@@ -89,7 +89,8 @@ class Event_model extends CI_Model
         //取得したidからイベントを削除
         $this->db->delete('event', array('id' => $id));
         //取得したidからイベントに参加する人を削除
-        $this->db->delete('event_reserve', array('event_id' => $id));
+        $this->db->where('event_id', $id);
+        $this->db->delete('event_reserve');
     }
 
     public function update($event_id, $first_name, $last_name, $user_email, $date)
@@ -110,6 +111,17 @@ class Event_model extends CI_Model
         $this->db->query($sql, array($event_id));
         $this->db->insert('event_reserve', $data);
         $this->db->trans_complete();
+    }
+
+    public function event_people_mail($event_id)
+    {
+        $sql   = "SELECT email from event_reserve WHERE event_id = ? ";
+        $query = $this->db->query($sql, array($event_id));
+        if($query->num_rows() > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 ?>

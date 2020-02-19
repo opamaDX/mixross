@@ -30,26 +30,33 @@ class Event_reserve extends CI_Controller
             //event_modelをロードする
             $this->load->model('event_model');
 
-            //eventの参加人数を増やす
-            //eventに参加する人の名前とメールアドレスと登録した日時をデータベースに記入
-            $date = date('Y-m-d');
-            
-            $this->event_model->update($event_id, $_SESSION['user_first_name'], $_SESSION['user_last_name'], $_SESSION['user_email'], $date);
+            //この選択したイベントに参加している人の情報を取得
+            $event_people = $this->event_model->event_people_mail($event_id);
 
-            //emailライブラリをロード
-            $this->load->library('email');
-            //メールの内容
-            $message = "今回は参加予約をしていただいてありがとうございました。";
-            //イベント申し込み完了のメールを送信する
-            $this->email->from('fumiya5863@gmail.com', '櫻井郁也');
-            $this->email->to($_SESSION['user_email']);
-            $this->email->subject('イベント申し込み完了メール');
-            $this->email->message($message);
-            $this->email->send();
+            if($event_people === true) {
+                //eventの参加人数を増やす
+                //eventに参加する人の名前とメールアドレスと登録した日時をデータベースに記入
+                $date = date('Y-m-d');
+                $this->event_model->update($event_id, $_SESSION['user_first_name'], $_SESSION['user_last_name'], $_SESSION['user_email'], $date);
+
+                //emailライブラリをロード
+                $this->load->library('email');
+                //メールの内容
+                $message = "今回は参加予約をしていただいてありがとうございました。";
+                //イベント申し込み完了のメールを送信する
+                $this->email->from('fumiya5863@gmail.com', '櫻井郁也');
+                $this->email->to($_SESSION['user_email']);
+                $this->email->subject('イベント申し込み完了メール');
+                $this->email->message($message);
+                $this->email->send();
             
-            //イベントidを削除後ホーム画面に移動
-            unset($_SESSION['event_id']);
-            redirect('main_ctrl');
+                //イベントidを削除後ホーム画面に移動
+                unset($_SESSION['event_id']);
+                redirect('main_ctrl');
+            } else {
+                //予約済みの人は別画面に移動
+                redirect('main_ctrl');   
+            }
         }
     }
 }

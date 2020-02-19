@@ -65,7 +65,7 @@
                                         <?php echo form_submit($form_login_btn_data); ?>
                                     </div>
                                 </div>
-                            <?php echo form_colse(); ?>
+                            <?php echo form_close(); ?>
                             <!-- form_end -->
 
                         </div>
