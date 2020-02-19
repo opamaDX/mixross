@@ -55,7 +55,8 @@ class Event_reserve extends CI_Controller
                 redirect('main_ctrl');
             } else {
                 //予約済みの人は別画面に移動
-                redirect('main_ctrl');   
+                unset($_SESSION['event_id']);
+                redirect('main_ctrl');
             }
         }
     }
