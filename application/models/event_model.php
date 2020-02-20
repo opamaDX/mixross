@@ -115,8 +115,10 @@ class Event_model extends CI_Model
 
     public function event_people_mail($event_id)
     {
+        //イベントidからそのイベントを予約している人のemailを取得
         $sql   = "SELECT email from event_reserve WHERE event_id = ? ";
         $query = $this->db->query($sql, array($event_id));
+        //そのイベントを予約している人であれば、false
         if($query->num_rows() > 0) {
             return false;
         } else {

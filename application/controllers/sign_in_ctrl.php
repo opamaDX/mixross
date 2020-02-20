@@ -7,15 +7,15 @@ class Sign_in_ctrl extends CI_Controller
     {
         //変数の初期化
         $err_message = array();
-
-        //CSRF対策
-        if($this->input->method(true) !== 'POST') {
-            show_404();
-        }
         
         //login_btnが押された時
         if($this->input->post('login_btn')) {
-
+            
+            //CSRF対策
+            if($this->input->method(true) !== 'POST') {
+                show_404();
+            }
+            
             //XSSフィルタでemailとpasswordを受け取る
             $email    = $this->input->post('email', true);
             // パスワードはハッシュ化させておく

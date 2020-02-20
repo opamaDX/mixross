@@ -1,4 +1,4 @@
-//ajax通信
+// ajax通信
 $(function() {
     $('#login_btn').on('click', function(e) {
         //イベントキャンセル
@@ -19,7 +19,9 @@ $(function() {
                 window.location.href = 'http://localhost/mixross-master/mixross/index.php/main_ctrl/index';
             } else {
                 var err_message = JSON.parse(data);
-                $('#error').text("メールアドレスまたはパスワードが正しくないです");
+                if(err_message == true) {
+                    $('#error').text("メールアドレスまたはパスワードが正しくないです");
+                }
             }
         });
     });

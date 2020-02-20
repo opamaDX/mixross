@@ -7,7 +7,8 @@
 
     $form_hidden_data = array(
         'id'            => 'token',
-        $csrf['name']   => $csrf['hash'],
+        'name'          => $csrf['name'],
+        'value'         => $csrf['hash'],
     );
 
     $form_email_data = array(

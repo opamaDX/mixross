@@ -56,7 +56,7 @@ class Main_ctrl extends CI_Controller {
 		//CSRFトークン生成
 		$data['csrf'] = array(
 			'name' => $this->security->get_csrf_token_name(),
-            'hash' => $this->security->get_csrf_hash()
+            'hash' => $this->security->get_csrf_hash(),
 		);
 		
 		$this->load->view('sign_in_view', $data);
