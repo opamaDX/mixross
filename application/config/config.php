@@ -27,8 +27,8 @@ $config['auth_time'] = 3600;
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '//www.mixross.com';
-// $config['base_url'] = 'http://localhost/mixross-master/mixross';
+// $config['base_url'] = '//www.mixross.com';
+$config['base_url'] = 'http://localhost/mixross-master/mixross';
 
 /*
 |--------------------------------------------------------------------------
@@ -457,7 +457,7 @@ $config['csrf_protection'] = false;
 $config['csrf_token_name'] = 'csrf_token';
 $config['csrf_cookie_name'] = 'csrf_cookie';
 $config['csrf_expire'] = 7200;
-$config['csrf_regenerate'] = FALSE;
+$config['csrf_regenerate'] = false;
 $config['csrf_exclude_uris'] = array();
 
 /*

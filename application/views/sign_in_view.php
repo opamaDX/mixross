@@ -30,7 +30,7 @@
                             <!-- 入力ミスがある場合 -->
                             <small id="error" style="color:red"></small>
                             
-                            <?php echo form_open('sign_in_ctrl/login', $form_open_data, $form_hidden_data); ?>
+                            <?php echo form_open('sign_in_ctrl/login', $form_open_data); ?>
 
                                 <div class="row align-items-center">
                                     <!-- email -->

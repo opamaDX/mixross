@@ -5,12 +5,6 @@
         'id'            => ''
     );
 
-    $form_hidden_data = array(
-        'id'            => 'token',
-        'name'          => $csrf['name'],
-        'value'         => $csrf['hash'],
-    );
-
     $form_email_data = array(
         'class'         => 'form-control',
         'id'            => 'email',
