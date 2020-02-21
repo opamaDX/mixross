@@ -34,7 +34,8 @@
                     <h2>参加予約を確定した後にメールを送信します</h2>
                 </div>
                 <p id="send_reserve" class="lead text-center"></p>
-                <form id="form" action="<?php echo site_url('event_reserve/reserve_confirm'); ?>" method="get">
+                <form id="form" action="<?php echo site_url('event_reserve/reserve_confirm'); ?>" method="POST">
+                    <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>">
                     <button id="reserve_confirm" class="btn btn-primary btn-block" name="reserve_confirm">参加予約確定</button>
                 </form>
             </div>

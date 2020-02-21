@@ -8,9 +8,9 @@ class Event_reserve extends CI_Controller
         //ログインした状態で、セッションのuser_idを取得している場合
         if(isset($_SESSION['user_id'])) {
             //予約ボタンが押された時
-            if(isset($_GET['reserve'])) {
+            if(isset($_POST['reserve'])) {
                 //イベントidを取得しセッションに格納した後に予約確認画面に移動
-                $_SESSION['event_id'] = $this->input->get('event_id');
+                $_SESSION['event_id'] = $this->input->post('event_id', true);
                 redirect('main_ctrl/load_page_event_reserve');
             }
         } else {
@@ -22,7 +22,7 @@ class Event_reserve extends CI_Controller
     public function reserve_confirm()
     {   
         //予約確認ボタンが押された時
-        if(isset($_GET['reserve_confirm'])) { 
+        if(isset($_POST['reserve_confirm'])) { 
             
             //セッションの中に格納されているevent_idを取得
             $event_id = $_SESSION['event_id'];
