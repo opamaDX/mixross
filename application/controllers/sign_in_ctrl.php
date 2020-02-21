@@ -69,7 +69,7 @@ class Sign_in_ctrl extends CI_Controller
         }
         //セッションファイルを削除
         session_destroy();
-        //ログアウト後ホーム画面に移動
+        // ログアウト後ホーム画面に移動
         redirect('main_ctrl/index');
     }
 } 
