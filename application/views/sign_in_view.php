@@ -60,6 +60,7 @@
                                         <?php echo anchor('main_ctrl/load_page_sign_up', '新規登録'); ?>
                                     </div>
 
+
                                     <!-- login_btn -->
                                     <div class="col-6 mt-2 mt-sm-3">
                                         <?php echo form_submit($form_login_btn_data); ?>
@@ -79,7 +80,6 @@
     </main>
     <!-- Footer Start -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/ajax.js"></script>
     <script src="<?php echo base_url() ?>assets/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="<?php echo base_url() ?>assets/lib/CustomEase.min.js"></script>
@@ -88,6 +88,7 @@
     <script src="<?php echo base_url() ?>assets/lib/flexslider/jquery.flexslider-min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/core.js"></script>
     <script src="<?php echo base_url() ?>assets/js/main.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/ajax.js"></script>
     <!-- Footer End -->
 </body>
 
