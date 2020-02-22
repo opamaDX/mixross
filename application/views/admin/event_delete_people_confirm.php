@@ -180,13 +180,13 @@
                                         <p class="lead"><?php echo $row['email']; ?></p>
                                     </div>
                                 </div>
-                            <form action="<?php echo site_url('event_edit_delete/delete_people_confirm'); ?>" method="post">
-                                <input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-                                <div class="row">
-                                    <button type="submit" class="btn btn-danger btn-lg btn-block ml-3 mr-3" name="delete_people_btn">イベント参加者削除確認</button>
-                                </div>
-                            </form>
-                            <!-- <?php endforeach; ?> -->
+                                <?php echo form_open('event_edit_delete/delete_people_confirm') ?>
+                                    <input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+                                    <div class="row">
+                                        <button type="submit" class="btn btn-danger btn-lg btn-block ml-3 mr-3" name="delete_people_btn">イベント参加者削除確認</button>
+                                    </div>
+                                <?php echo form_close(); ?>
+                            <?php endforeach; ?>
                         </div>
 
                     </div>
