@@ -167,7 +167,7 @@
 
                         <!--Card content-->
                         <div class="card-body">
-                            <form action="<?php echo site_url('event_up_ctrl'); ?>" method="post">
+                            <?php echo form_open('event_up_ctrl'); ?>
                                 <div class="form-group">
                                     <label for="">イベントタイトル</label>
                                     <input type="text" class="form-control" name="title" value="<?php echo set_value('title'); ?>">
@@ -207,7 +207,7 @@
                                         <button type="submit" class="btn btn-primary btn-lg btn-block ml-3 mr-3" name="btn">イベント投稿</button>
                                     </div>
                                 </div>
-                            </form>
+                            <?php echo form_close(); ?>
                             
                         </div>
 
