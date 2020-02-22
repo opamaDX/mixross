@@ -33,11 +33,6 @@ class Main_ctrl extends CI_Controller {
 
 	public function load_page_event_details() {
 		// csrfトークンを生成
-		$data['csrf'] = array(
-			'name' => $this->security->get_csrf_token_name(),
-			'hash' => $this->security->get_csrf_hash(),
-		);
-		
 		//イベントidを取得
 		$id = $this->input->get('id');
 		//受け取ったidを元にデータベースからイベント情報を取得
@@ -48,12 +43,15 @@ class Main_ctrl extends CI_Controller {
 	public function load_page_event_reserve() {
 		//イベントidを格納している時
 		if(isset($_SESSION['event_id'])) {
-			//csrfトークンを生成
-			$data['csrf'] = array(
-				'name' => $this->security->get_csrf_token_name(),
-				'hash' => $this->security->get_csrf_hash(),
-			);
-			$this->load->view('event_reserve_view', $data);
+			$this->load->view('event_reserve_view');
+		} else {
+			redirect('main_ctrl');
+		}
+	}
+
+	public function load_page_my_page() {
+		if(isset($_SESSION['user_id'])) {
+			$this->load->view('my_page_view');
 		} else {
 			redirect('main_ctrl');
 		}
