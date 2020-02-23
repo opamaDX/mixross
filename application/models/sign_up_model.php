@@ -11,9 +11,6 @@ class Sign_up_model extends CI_Model {
     // 仮テーブルにデータを格納する
     public function pre_regist($url_token,$birthday,$graduate_date) {
 
-        var_dump($graduate_date);
-        var_dump($birthday);
-
         $pre_user_data = array(
             'url_token'       => $url_token,
             'last_name'       => $this->session->userdata('last_name'),
@@ -81,8 +78,6 @@ class Sign_up_model extends CI_Model {
         $query = $this->db->select('email')->from('users')->where('url_token', $url_token)->get();
         $result = $query->row_array();
 
-        var_dump($result);
-
         if ( time() < $expire_date) {
             return TRUE;
         } else {
@@ -96,8 +91,6 @@ class Sign_up_model extends CI_Model {
         $month = $this->session->userdata('month');
         $day = $this->session->userdata('day');
 
-        echo "誕生日は".$year.$month.$day."\n";
-
         $birthday = date('Y-m-d', mktime(0, 0, 0, $month, $day, $year));
 
         return $birthday;
@@ -107,8 +100,6 @@ class Sign_up_model extends CI_Model {
     public function create_graduate() {
         $graduate_year = $this->session->userdata('graduate_year');
         $graduate_month = $this->session->userdata('graduate_month');
-
-        echo "卒業日は".$graduate_year.$graduate_month."\n";
 
         $graduate_date = date('Y-m-d', mktime(0, 0, 0, $graduate_month, 1 ,$graduate_year));
 
