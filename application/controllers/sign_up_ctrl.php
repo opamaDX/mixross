@@ -30,9 +30,14 @@ class Sign_up_ctrl extends CI_Controller {
 
 	public function  complete() {
 
-		//usersモデルとemailライブラリーのロード
+		//usersモデルとemailライブラリーとCOOKIEヘルパーのロード
 		$this->load->model('sign_up_model');
 		$this->load->library('email');
+		$this->load->helper('cookie');
+
+		// 多重リロード対策
+		$csrf_cookie = get_cookie('csrf_cookie');
+		if ( $csrf_cookie == '' ) { show_404(); }
 
 		// トークン付きURLの生成
 		$url_token = hash('sha256',uniqid(rand(),1));
@@ -53,6 +58,10 @@ class Sign_up_ctrl extends CI_Controller {
 
 		// 仮登録完了画面に遷移
 		$this->load->view('sign_up_complete_view');
+
+		// 多重リロード対策
+		unset( $_COOKIE['csrf_cookie'] );
+		setcookie( 'csrf_cookie', '', time()-3600, '/');
 	}
 
 	public function  regist() {

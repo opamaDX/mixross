@@ -22,6 +22,7 @@
                     <li><?php echo anchor('main_ctrl/load_page_what_is', 'みくろすとは'); ?></li>
                     <li><?php echo anchor('main_ctrl/load_page_event', 'イベント'); ?></li>
                     <li><?php echo anchor('main_ctrl/load_page_question', 'よくある質問'); ?></li>
+                    <li><?php echo anchor('main_ctrl/load_page_access','アクセス'); ?></li>
                     <li><a href="mailto:info@example.com?subject=&body=">お問い合わせ</a></li>
                 </ul>
                 <ul class="navbar-nav ml-lg-auto">
@@ -36,3 +37,4 @@
         </nav>
     </div>
 </div>
+
