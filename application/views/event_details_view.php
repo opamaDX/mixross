@@ -76,10 +76,10 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <?php echo form_open('event_reserve'); ?>
+                        <form action="<?php echo site_url('event_reserve'); ?>" method="get">
                             <input type="hidden" name="event_id" value="<?php echo $row['id']; ?>">
                             <button class="btn btn-primary btn-block" name="reserve">参加予約</button>
-                        <?php echo form_close(); ?>
+                        </form>
                     </div>
                     <!--/.row-->
                 </div>
