@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Event_reserve extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        date_default_timezone_set('Asia/Tokyo');
+    }
+    
     public function index()
     {
         //ログインした状態で、セッションのuser_idを取得している場合

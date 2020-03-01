@@ -7,6 +7,7 @@ class Event_edit_delete extends CI_Controller
     {
         parent::__construct();
         $this->load->model('event_model');
+        date_default_timezone_set('Asia/Tokyo');
     }
     
     public function edit()

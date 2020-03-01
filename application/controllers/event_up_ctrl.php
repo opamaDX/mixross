@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Event_up_ctrl extends CI_Controller 
 {   
+    public function __construct()
+    {
+        parent::__construct();
+        date_default_timezone_set('Asia/Tokyo');
+    }
+    
     public function index()
     {           
         //イベント投稿が押された時
