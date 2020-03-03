@@ -24,6 +24,9 @@
                     <li><?php echo anchor('main_ctrl/load_page_question', 'よくある質問'); ?></li>
                     <li><?php echo anchor('main_ctrl/load_page_access','アクセス'); ?></li>
                     <li><a href="mailto:info@example.com?subject=&body=">お問い合わせ</a></li>
+                    <?php if(isset($_SESSION['user_id'])): ?>
+                        <li><?php echo anchor('main_ctrl/load_page_my_page', 'マイページ'); ?></li>
+                    <?php endif; ?>
                 </ul>
                 <ul class="navbar-nav ml-lg-auto">
                     <?php if(empty($_SESSION['user_id'])): ?>

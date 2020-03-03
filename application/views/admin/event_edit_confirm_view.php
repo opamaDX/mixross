@@ -167,7 +167,7 @@
 
                         <!--Card content-->
                         <div class="card-body">
-                            <form action="<?php echo site_url('event_edit_delete/edit_confirm'); ?>" method="post">
+                            <?php echo form_open('event_edit_delete/edit_confirm'); ?>
                                 <?php foreach($event_edit as $row): ?>
                                     <div class="form-group">
                                         <label for="">イベントタイトル</label>
@@ -209,7 +209,7 @@
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
-                            </form>
+                            <?php echo form_close(); ?>
                             
                         </div>
 

@@ -187,11 +187,11 @@
                                     </div>
                                 </div>
                             <?php endforeach; ?>
-                            <form action="<?php echo site_url('event_edit_delete/delete_confirm'); ?>" method="post">
+                            <?php echo form_open('event_edit_delete/delete_confirm'); ?>
                                 <div class="row">
                                     <button type="submit" class="btn btn-danger btn-lg btn-block ml-3 mr-3" name="delete_btn">イベント削除確認</button>
                                 </div>
-                            </form>
+                            <?php echo form_close(); ?>
                         </div>
 
                     </div>

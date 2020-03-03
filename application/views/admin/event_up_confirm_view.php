@@ -185,15 +185,18 @@
                                     <p><?php if(isset($_SESSION['content'])) { echo nl2br($_SESSION['content']); } ?></p>
                                 </div>
                             </div>
-                            <form action="<?php echo site_url('event_up_ctrl/admin'); ?>" method="post"  enctype="multipart/form-data">
+                            <?php echo form_open_multipart('event_up_ctrl/admin'); ?>
                                 <div class="form-group">
-                                    <label class="text-warning">最後に投稿する画像を選択して下さい、また画像のサイズは1024KB、高さ768、幅1280以下にして下さい</label>
+                                    <label class="text-warning">
+                                        最後に投稿する画像を選択して下さい。また画像のサイズは1024KB、高さ768、幅1280以下にして下さい。
+                                        設定しない場合は画像はNO-IMAGEになります。
+                                    </label>
                                     <input type="file" class="form-control-file" name="file">
                                 </div>
                                 <div class="row">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block ml-3 mr-3" name="confirm_btn">イベント投稿確認</button>
                                 </div>
-                            </form>
+                            <?php echo form_close(); ?>
                         </div>
 
                     </div>

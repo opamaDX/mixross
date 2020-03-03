@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <form action="<?php echo site_url('event_reserve'); ?>" method="post">
+                        <form action="<?php echo site_url('event_reserve'); ?>" method="get">
                             <input type="hidden" name="event_id" value="<?php echo $row['id']; ?>">
                             <button class="btn btn-primary btn-block" name="reserve">参加予約</button>
                         </form>

@@ -68,7 +68,7 @@ class Event_model extends CI_Model
     {
         //予約人数を1人減らす
         $sql = "UPDATE event SET people = people - 1 WHERE id = ?";
-        $this->db->query($sql, array($event_id));   
+        $this->db->query($sql, array($event_id));
     }
 
     public function edit($id, $title, $content, $event_hold)
@@ -89,19 +89,15 @@ class Event_model extends CI_Model
         //取得したidからイベントを削除
         $this->db->delete('event', array('id' => $id));
         //取得したidからイベントに参加する人を削除
-        $this->db->delete('event_reserve', array('event_id' => $id));
+        $this->db->where('event_id', $id);
+        $this->db->delete('event_reserve');
     }
 
-    public function update($event_id)
+    public function update($event_id, $first_name, $last_name, $user_email, $date)
     {   
         //予約人数を1人増やす
         $sql = "UPDATE event SET people = people + 1 WHERE id = ?";
-        $this->db->query($sql, array($event_id));
-    }
-
-    public function event_reserve($event_id, $first_name, $last_name, $user_email, $date)
-    {
-        //データベースに格納する値
+        //データーベースに格納する値
         $name = $last_name.$first_name;
         $data = array(
             'event_id' => $event_id,
@@ -109,8 +105,25 @@ class Event_model extends CI_Model
             'email'    => $user_email,
             'date'     => $date
         );
-        //データベースに値を追加
+        
+        //データベースに値を追加その時にtransactio処理をでやる
+        $this->db->trans_start();
+        $this->db->query($sql, array($event_id));
         $this->db->insert('event_reserve', $data);
+        $this->db->trans_complete();
+    }
+
+    public function event_people_mail($event_id)
+    {
+        //イベントidからそのイベントを予約している人のemailを取得
+        $sql   = "SELECT email from event_reserve WHERE event_id = ? ";
+        $query = $this->db->query($sql, array($event_id));
+        //そのイベントを予約している人であれば、false
+        if($query->num_rows() > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 ?>

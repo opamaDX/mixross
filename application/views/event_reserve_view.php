@@ -30,13 +30,13 @@
         <section class="pt-9">
             <div class="container">
                 <div class="mb-6">
-                    <h2 class="mb-4">参加予約を確定してもいいですか？</hh2>
+                    <h2 class="mb-4">参加予約を確定してもいいですか？</h2>
                     <h2>参加予約を確定した後にメールを送信します</h2>
                 </div>
                 <p id="send_reserve" class="lead text-center"></p>
-                <form id="form" action="<?php echo site_url('event_reserve/reserve_confirm'); ?>" method="post">
+                <?php echo form_open('event_reserve/reserve_confirm', 'id="form"'); ?>
                     <button id="reserve_confirm" class="btn btn-primary btn-block" name="reserve_confirm">参加予約確定</button>
-                </form>
+                <?php echo form_close(); ?>
             </div>
         </section>
 

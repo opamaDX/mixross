@@ -53,7 +53,7 @@ class Admin_ctrl extends CI_Controller {
 
 	public function load_page_event_delete_people_confirm() {
 		//セッションに削除するidを格納している場合
-		if($_SESSION['delete_people_id']) {
+		if(isset($_SESSION['delete_people_id'])) {
 			//データベースのロード
 			$this->load->model('event_model');
 			//削除する参加者の情報取得
@@ -67,7 +67,7 @@ class Admin_ctrl extends CI_Controller {
 
 	public function load_page_event_edit_confirm() {
 		//セッションIDにイベントidを格納している場合
-		if($_SESSION['edit_id']) {
+		if(isset($_SESSION['edit_id'])) {
 			//データベースのロード
 			$this->load->model('event_model');
 			//編集するイベントの情報取得
@@ -81,7 +81,7 @@ class Admin_ctrl extends CI_Controller {
 
 	public function load_page_event_delete_confirm() {
 		//セッションに削除するidを格納している場合
-		if($_SESSION['delete_id']) {
+		if(isset($_SESSION['delete_id'])) {
 			//データべ―スのload
 			$this->load->model('event_model');
 			//削除するイベントの情報の取得
@@ -99,7 +99,7 @@ class Admin_ctrl extends CI_Controller {
 
 	public function load_page_event_up_confirm() {
 		//セッションに投稿するイベント情報を格納している場合
-		if($_SESSION['event_hold']) {
+		if(isset($_SESSION['event_hold'])) {
 			$this->load->view('admin/event_up_confirm_view');
 		} else {
 			redirect('admin_ctrl/load_page_event_update');
