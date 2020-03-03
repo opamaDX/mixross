@@ -30,10 +30,10 @@
                                 <h5 class="col-12 border-bottom text-left">本登録完了</h5>
 
                                 <h4 class="col-12 mt-5">本登録が完了しました！</h4><br>
-                                <p class="col-12 mt-8">test</p>
-                                <p class="col-12 mt-4">test</p>
-                                <p class="col-12 mt-4">test</p>
-                                <p class="col-12 mt-4">test</p>
+                                <p class="col-12 mt-8"></p>
+                                <p class="col-12 mt-4"></p>
+                                <p class="col-12 mt-4"></p>
+                                <p class="col-12 mt-4"></p>
                             </div>
                         </div>
                     </div>

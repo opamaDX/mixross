@@ -50,5 +50,15 @@ create table pre_users (
 );
 ```
 
+```
+create table attendance_record (
+ record_id 		int(11) primary key auto_increment,
+ user_id        int(11) NOT NULL,
+ attended_at    timestamp,
+ lefted_at      timestamp
+);
+```
+
+
 
 

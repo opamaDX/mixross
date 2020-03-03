@@ -40,14 +40,21 @@ class Sign_up_model extends CI_Model {
         $user_data = $query->row_array();
 
         $user_data = array(
-            'last_name' => element('last_name', $user_data),
-            'last_kana_name' => element('last_kana_name', $user_data),
-            'first_name' => element('first_name', $user_data),
+            'last_name'       => element('last_name', $user_data),
+            'last_kana_name'  => element('last_kana_name', $user_data),
+            'first_name'      => element('first_name', $user_data),
             'first_kana_name' => element('first_kana_name', $user_data),
-            'gender' => element('gender', $user_data),
-            'birthday' => element('birthday', $user_data),
-            'email' => element('email', $user_data),
-            'password' => element('password', $user_data)
+            'gender'          => element('gender', $user_data),
+            'birthday'        => element('birthday', $user_data),
+            'email'           => element('email', $user_data),
+            'password'        => element('password', $user_data),
+            'university'      => element('university', $user_data),
+            'faculty'         => element('faculty', $user_data),
+            'department'      => element('department', $user_data),
+            'graduate_date'   => element('graduate_date', $user_data),
+            'high_school'     => element('high_school', $user_data),
+            'seminar'         => element('seminar', $user_data),
+            'club'            => element('club', $user_data)
         );
 
         // 仮テーブルのカラムを削除し、本テーブルに移動する
@@ -60,10 +67,10 @@ class Sign_up_model extends CI_Model {
     // 1時間以内のアクセスか調べる
     public function check_date($url_token) {
 
-        $query = $this->db->select('date')->from('pre_users')->where('url_token', $url_token)->get();
+        $query = $this->db->select('created_at')->from('pre_users')->where('url_token', $url_token)->get();
 
         $result = $query->row_array();
-        $expire_date = strtotime($result['date']) + 3600;
+        $expire_date = strtotime($result['created_at']) + 3600;
 
         if ( time() < $expire_date) {
             return TRUE;
